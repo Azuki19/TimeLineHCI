@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Línea de Tiempo Interactiva - HCI</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<div class="timeline-container">
+			<h1>Historia de la Interacción Humano-Computadora</h1>
+			<div class="timeline-wrapper">
+				<button class="nav-button nav-left" onclick="scrollTimeline(-200)">&#9665;</button>
+				<div class="timeline">
+					<div class="event" onclick="openPopup('info1')">
+						<img src="memex.jpg" alt="Memex" />
+						<p>1945 - Memex</p>
+					</div>
+					<div class="event" onclick="openPopup('info2')">
+						<img src="mouse.jpg" alt="Mouse" />
+						<p>1963 - Mouse</p>
+					</div>
+					<div class="event" onclick="openPopup('info3')">
+						<img src="demo.jpg" alt="Demo Engelbart" />
+						<p>1968 - Gran Demostración</p>
+					</div>
+					<div class="event" onclick="openPopup('info4')">
+						<img src="xerox.jpg" alt="Xerox Alto" />
+						<p>1973 - Xerox Alto</p>
+					</div>
+					<div class="event" onclick="openPopup('info5')">
+						<img src="mac.jpg" alt="Macintosh" />
+						<p>1984 - Macintosh</p>
+					</div>
+					<div class="event" onclick="openPopup('info6')">
+						<img src="web.jpg" alt="WWW" />
+						<p>1990 - World Wide Web</p>
+					</div>
+					<div class="event" onclick="openPopup('info7')">
+						<img src="iphone.jpg" alt="iPhone" />
+						<p>2007 - iPhone</p>
+					</div>
+					<div class="event" onclick="openPopup('info8')">
+						<img src="iot.jpg" alt="Computación Ubicua" />
+						<p>2010 - Computación Ubicua</p>
+					</div>
+					<div class="event" onclick="openPopup('info9')">
+						<img src="voice.jpg" alt="Asistentes de Voz" />
+						<p>2014 - Asistentes de Voz</p>
+					</div>
+					<div class="event" onclick="openPopup('info10')">
+						<img src="vr.jpg" alt="Realidad Virtual" />
+						<p>Presente - Realidad Virtual</p>
+					</div>
+				</div>
+				<button class="nav-button nav-right" onclick="scrollTimeline(200)">&#9655;</button>
+			</div>
+		</div>
+
+		<div id="popup" class="popup">
+			<div class="popup-content">
+				<span class="close" onclick="closePopup()">&times;</span>
+				<p id="popup-text"></p>
+			</div>
+		</div>
+
+		<script>
+			function openPopup(info) {
+				let text = '';
+				switch (info) {
+					case 'info1':
+						text = 'Memex (1945): Primera idea de una computadora que organizaría información como nuestra memoria.';
+						break;
+					case 'info2':
+						text = 'Mouse (1963): Creado por Douglas Engelbart, cambió la forma en que controlamos las computadoras.';
+						break;
+					case 'info3':
+						text = 'La Gran Demostración (1968): Engelbart mostró el mouse, ventanas y edición de texto en vivo.';
+						break;
+					case 'info4':
+						text = 'Xerox Alto (1973): Primera computadora con una interfaz gráfica que usaba íconos y ventanas.';
+						break;
+					case 'info5':
+						text = 'Macintosh (1984): Apple llevó las interfaces gráficas al público general con el primer Mac.';
+						break;
+					case 'info6':
+						text = 'World Wide Web (1990): Tim Berners-Lee inventó la web y los primeros sitios de internet.';
+						break;
+					case 'info7':
+						text =
+							'iPhone (2007): Apple introdujo pantallas táctiles sin botones, cambiando la interacción con los móviles.';
+						break;
+					case 'info8':
+						text =
+							'Computación Ubicua (2010): Dispositivos inteligentes comenzaron a integrarse a nuestra vida diaria.';
+						break;
+					case 'info9':
+						text = 'Asistentes de Voz (2014): Siri, Alexa y Google Assistant mejoraron la accesibilidad.';
+						break;
+					case 'info10':
+						text = 'Realidad Virtual (Presente): Experiencias inmersivas con VR y AR.';
+						break;
+				}
+				document.getElementById('popup-text').innerText = text;
+				document.getElementById('popup').style.display = 'block';
+			}
+			function closePopup() {
+				document.getElementById('popup').style.display = 'none';
+			}
+			function scrollTimeline(distance) {
+				document.querySelector('.timeline').scrollBy({ left: distance, behavior: 'smooth' });
+			}
+		</script>
+	</body>
+</html>
