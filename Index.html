@@ -72,63 +72,91 @@
 		<div id="popup" class="popup">
 			<div class="popup-content">
 				<span class="close" onclick="closePopup()">&times;</span>
+				<img id="popup-image" src="" alt="" />
+				<h2 id="popup-title"></h2>
 				<p id="popup-text"></p>
 			</div>
 		</div>
 
 		<script>
 			function openPopup(info) {
+				let title = '';
 				let text = '';
+				let image = '';
+
 				switch (info) {
 					case 'info1':
+						title = '1945 - Memex';
 						text =
-							'Memex (1945): Vannevar Bush propuso el concepto de Memex, una máquina teórica que permitiría almacenar y recuperar información mediante enlaces asociativos (hipervínculos). Este concepto inspiró la creación de la navegación por internet y la estructura de las páginas web.';
+							'Vannevar Bush propuso el concepto de Memex, una máquina teórica que permitiría almacenar y recuperar información mediante enlaces asociativos (hipervínculos). Este concepto inspiró la creación de la navegación por internet y la estructura de las páginas web.';
+						image =
+							'https://s2-techtudo.glbimg.com/khcBybVZ64WqxatwI9qTD1Fx6gg=/0x0:627x429/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/i/m/jmnkS6QsCbeJn6l9BMuA/2013-06-06-gpc20130606-1.jpg';
 						break;
 					case 'info2':
+						title = '1963 - Mouse';
 						text =
-							'Mouse (1963): Douglas Engelbart inventó el ratón, un dispositivo que permitió interactuar con las computadoras de manera más intuitiva mediante el control de un cursor en pantalla. El ratón facilitó la adopción de interfaces gráficas de usuario (GUI).';
+							'Douglas Engelbart inventó el ratón, un dispositivo que permitió interactuar con las computadoras de manera más intuitiva mediante el control de un cursor en pantalla. El ratón facilitó la adopción de interfaces gráficas de usuario (GUI).';
+						image = 'https://iot.purple-sheep.com/images/mouse.png';
 						break;
 					case 'info3':
+						title = '1968 - Gran Demostración';
 						text =
-							'La Gran Demostración (1968): Douglas Engelbart realizó la famosa "Madre de todas las demostraciones", donde presentó por primera vez el uso combinado de un ratón, ventanas, hipervínculos y edición colaborativa en tiempo real. Esta demostración sentó las bases de las interfaces gráficas modernas.';
+							'Douglas Engelbart realizó la famosa "Madre de todas las demostraciones", donde presentó por primera vez el uso combinado de un ratón, ventanas, hipervínculos y edición colaborativa en tiempo real. Esta demostración sentó las bases de las interfaces gráficas modernas.';
+						image =
+							'https://www.lanacion.com.ar/resizer/v2/una-foto-promocional-del-nls-el-sistema-disenado-RJQ6IGMLUFE7NFHUWAGUW2NWWU.jpg?auth=a03af131b2d85c64bd02546df3256f28c3f0fa8b591015a76f4dbb092dd5aa8a&width=420&height=280&quality=70&smart=true';
 						break;
 					case 'info4':
+						title = '1973 - Xerox Alto';
 						text =
-							'Xerox Alto (1973): Xerox desarrolló el Alto, la primera computadora personal con una interfaz gráfica de usuario (GUI) basada en ventanas y con soporte para un ratón. Aunque no fue comercialmente exitosa, influyó directamente en el diseño de las computadoras modernas.';
+							'Xerox desarrolló el Alto, la primera computadora personal con una interfaz gráfica de usuario (GUI) basada en ventanas y con soporte para un ratón. Aunque no fue comercialmente exitosa, influyó directamente en el diseño de las computadoras modernas.';
+						image = 'https://www.teknofilo.com/wp-content/uploads/2021/10/Xerox-Alto-1.jpg';
 						break;
 					case 'info5':
+						title = '1984 - Macintosh';
 						text =
-							'Macintosh (1984): Apple lanzó el Macintosh, la primera computadora personal con una interfaz gráfica accesible para el público general. Introdujo el uso de iconos, ventanas y menús desplegables, revolucionando la manera en que las personas interactúan con las computadoras.';
+							'Apple lanzó el Macintosh, la primera computadora personal con una interfaz gráfica accesible para el público general. Introdujo el uso de iconos, ventanas y menús desplegables, revolucionando la manera en que las personas interactúan con las computadoras.';
+						image = 'https://ychef.files.bbci.co.uk/1280x720/p0h6vfmf.jpg';
 						break;
 					case 'info6':
+						title = '1990 - World Wide Web';
 						text =
-							'World Wide Web (1990): Tim Berners-Lee creó la World Wide Web, un sistema de navegación mediante hipervínculos que permitió acceder a páginas web de manera sencilla. La combinación de navegadores y páginas web impulsó la masificación de internet.';
+							'Tim Berners-Lee creó la World Wide Web, un sistema de navegación mediante hipervínculos que permitió acceder a páginas web de manera sencilla. La combinación de navegadores y páginas web impulsó la masificación de internet.';
+						image = 'https://i.blogs.es/8d269d/tim/650_1200.jpg';
 						break;
 					case 'info7':
+						title = '2007 - iPhone';
 						text =
-							'iPhone (2007): Apple presentó el iPhone, que popularizó las interfaces basadas en pantallas táctiles y gestos. Este dispositivo transformó la forma en que las personas acceden a la información y las aplicaciones, marcando el inicio de la era de los smartphones.';
+							'Apple presentó el iPhone, que popularizó las interfaces basadas en pantallas táctiles y gestos. Este dispositivo transformó la forma en que las personas acceden a la información y las aplicaciones, marcando el inicio de la era de los smartphones.';
+						image = 'https://i.blogs.es/608190/650_1000_iphone_3g/450_1000.jpg';
 						break;
 					case 'info8':
+						title = '2010 - Computación Ubicua';
 						text =
-							'Computación Ubicua (2010): La computación ubicua se consolidó con dispositivos como smartwatches, asistentes inteligentes y la Internet de las Cosas (IoT). La tecnología comenzó a integrarse en la vida cotidiana, permitiendo interacciones constantes y personalizadas.';
+							'La computación ubicua se consolidó con dispositivos como smartwatches, asistentes inteligentes y la Internet de las Cosas (IoT). La tecnología comenzó a integrarse en la vida cotidiana, permitiendo interacciones constantes y personalizadas.';
+						image = 'https://lovtechnology.com/wp-content/uploads/2024/06/Redes-inalambricas-1.jpg';
 						break;
 					case 'info9':
+						title = '2014 - Asistentes de Voz';
 						text =
-							'Asistentes de Voz (2014): El lanzamiento de Amazon Alexa y Google Assistant hizo que las interacciones mediante comandos de voz fueran más accesibles y naturales. Estos sistemas utilizan inteligencia artificial para interpretar y responder a las solicitudes de los usuarios.';
+							'El lanzamiento de Amazon Alexa y Google Assistant hizo que las interacciones mediante comandos de voz fueran más accesibles y naturales. Estos sistemas utilizan inteligencia artificial para interpretar y responder a las solicitudes de los usuarios.';
+						image = 'https://www.lavanguardia.com/files/image_449_220/uploads/2018/11/06/5fa44d078685f.png';
 						break;
 					case 'info10':
+						title = 'Presente - Realidad Virtual';
 						text =
-							'Realidad Virtual (Presente): Dispositivos como Oculus Rift y HoloLens han llevado la interacción humano-computadora a entornos inmersivos de realidad virtual y aumentada. Estas tecnologías permiten nuevas formas de trabajo, entretenimiento y formación mediante experiencias inmersivas.';
+							'Dispositivos como Oculus Rift y HoloLens han llevado la interacción humano-computadora a entornos inmersivos de realidad virtual y aumentada. Estas tecnologías permiten nuevas formas de trabajo, entretenimiento y formación mediante experiencias inmersivas.';
+						image = 'https://i.blogs.es/fea3ae/xiaomi-vr/1366_2000.jpg';
 						break;
 				}
+
+				document.getElementById('popup-title').innerText = title;
 				document.getElementById('popup-text').innerText = text;
+				document.getElementById('popup-image').src = image;
 				document.getElementById('popup').style.display = 'block';
 			}
+
 			function closePopup() {
 				document.getElementById('popup').style.display = 'none';
-			}
-			function scrollTimeline(distance) {
-				document.querySelector('.timeline').scrollBy({ left: distance, behavior: 'smooth' });
 			}
 		</script>
 	</body>
