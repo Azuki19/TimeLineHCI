@@ -20,49 +20,90 @@
 						<p>1945 - Memex</p>
 					</div>
 					<div class="event" onclick="openPopup('info2')">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/SAGE_console.jpg" alt="Light Pen" />
+						<p>1955 - Light Pen</p>
+					</div>
+					<div class="event" onclick="openPopup('info3')">
+						<img src="https://history-computer.com/ModernComputer/Software/Images/Sketchpad.jpg" alt="Sketchpad" />
+						<p>1962 - Sketchpad</p>
+					</div>
+					<div class="event" onclick="openPopup('info4')">
 						<img src="https://iot.purple-sheep.com/images/mouse.png" alt="Mouse" />
 						<p>1963 - Mouse</p>
 					</div>
-					<div class="event" onclick="openPopup('info3')">
+					<div class="event" onclick="openPopup('info5')">
 						<img
 							src="https://www.lanacion.com.ar/resizer/v2/una-foto-promocional-del-nls-el-sistema-disenado-RJQ6IGMLUFE7NFHUWAGUW2NWWU.jpg?auth=a03af131b2d85c64bd02546df3256f28c3f0fa8b591015a76f4dbb092dd5aa8a&width=420&height=280&quality=70&smart=true"
 							alt="Demo Engelbart"
 						/>
 						<p>1968 - Gran Demostración</p>
 					</div>
-					<div class="event" onclick="openPopup('info4')">
+					<div class="event" onclick="openPopup('info6')">
+						<img
+							src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Rand_Tablet.jpg/800px-Rand_Tablet.jpg"
+							alt="Rand Tablet"
+						/>
+						<p>1964 - Rand Tablet</p>
+					</div>
+					<div class="event" onclick="openPopup('info7')">
 						<img src="https://www.teknofilo.com/wp-content/uploads/2021/10/Xerox-Alto-1.jpg" alt="Xerox Alto" />
 						<p>1973 - Xerox Alto</p>
 					</div>
-					<div class="event" onclick="openPopup('info5')">
+					<div class="event" onclick="openPopup('info8')">
+						<img src="https://static.wikia.nocookie.net/retrocomputing/images/d/df/Kneepad-mit.jpg" alt="Knee Pad" />
+						<p>1977 - Knee Pad</p>
+					</div>
+					<div class="event" onclick="openPopup('info9')">
 						<img src="https://ychef.files.bbci.co.uk/1280x720/p0h6vfmf.jpg" alt="Macintosh" />
 						<p>1984 - Macintosh</p>
 					</div>
-					<div class="event" onclick="openPopup('info6')">
+					<div class="event" onclick="openPopup('info10')">
 						<img src="https://i.blogs.es/8d269d/tim/650_1200.jpg" alt="WWW" />
 						<p>1990 - World Wide Web</p>
 					</div>
-					<div class="event" onclick="openPopup('info7')">
+					<div class="event" onclick="openPopup('info11')">
+						<img src="https://i.blogs.es/2b8c8c/trackpoint-ibm-thinkpad/1366_2000.jpg" alt="TrackPoint" />
+						<p>1992 - TrackPoint IBM ThinkPad</p>
+					</div>
+					<div class="event" onclick="openPopup('info12')">
+						<img src="https://upload.wikimedia.org/wikipedia/en/6/6d/Newton_100.jpg" alt="Apple Newton" />
+						<p>1993 - Apple Newton</p>
+					</div>
+					<div class="event" onclick="openPopup('info13')">
 						<img src="https://i.blogs.es/608190/650_1000_iphone_3g/450_1000.jpg" alt="iPhone" />
 						<p>2007 - iPhone</p>
 					</div>
-					<div class="event" onclick="openPopup('info8')">
+					<div class="event" onclick="openPopup('info14')">
+						<img
+							src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Xbox-360-Kinect-Standalone.jpg/800px-Xbox-360-Kinect-Standalone.jpg"
+							alt="Kinect"
+						/>
+						<p>2010 - Microsoft Kinect</p>
+					</div>
+					<div class="event" onclick="openPopup('info15')">
 						<img
 							src="https://lovtechnology.com/wp-content/uploads/2024/06/Redes-inalambricas-1.jpg"
 							alt="Computación Ubicua"
 						/>
 						<p>2010 - Computación Ubicua</p>
 					</div>
-					<div class="event" onclick="openPopup('info9')">
+					<div class="event" onclick="openPopup('info16')">
 						<img
 							src="https://www.lavanguardia.com/files/image_449_220/uploads/2018/11/06/5fa44d078685f.png"
 							alt="Asistentes de Voz"
 						/>
 						<p>2014 - Asistentes de Voz</p>
 					</div>
-					<div class="event" onclick="openPopup('info10')">
+					<div class="event" onclick="openPopup('info17')">
 						<img src="https://i.blogs.es/fea3ae/xiaomi-vr/1366_2000.jpg" alt="Realidad Virtual" />
 						<p>Presente - Realidad Virtual</p>
+					</div>
+					<div class="event" onclick="openPopup('info18')">
+						<img
+							src="https://ichef.bbci.co.uk/news/640/cpsprodpb/3495/live/8559c430-7ec4-11ec-bb83-2b4c7f5a1cfb.jpg"
+							alt="Neural Interfaces"
+						/>
+						<p>Presente - Interfaces Cerebro-Computadora</p>
 					</div>
 				</div>
 				<button class="nav-button nav-right" onclick="scrollTimeline(200)">&#9655;</button>
@@ -79,81 +120,110 @@
 		</div>
 
 		<script>
-			function openPopup(info) {
-				let title = '';
-				let text = '';
-				let image = '';
+function openPopup(info) {
+    let title = '';
+    let text = '';
+    let image = '';
 
-				switch (info) {
-					case 'info1':
-						title = '1945 - Memex';
-						text =
-							'Vannevar Bush propuso el concepto de Memex, una máquina teórica que permitiría almacenar y recuperar información mediante enlaces asociativos (hipervínculos). Este concepto inspiró la creación de la navegación por internet y la estructura de las páginas web.';
-						image =
-							'https://s2-techtudo.glbimg.com/khcBybVZ64WqxatwI9qTD1Fx6gg=/0x0:627x429/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/i/m/jmnkS6QsCbeJn6l9BMuA/2013-06-06-gpc20130606-1.jpg';
-						break;
-					case 'info2':
-						title = '1963 - Mouse';
-						text =
-							'Douglas Engelbart inventó el ratón, un dispositivo que permitió interactuar con las computadoras de manera más intuitiva mediante el control de un cursor en pantalla. El ratón facilitó la adopción de interfaces gráficas de usuario (GUI).';
-						image = 'https://iot.purple-sheep.com/images/mouse.png';
-						break;
-					case 'info3':
-						title = '1968 - Gran Demostración';
-						text =
-							'Douglas Engelbart realizó la famosa "Madre de todas las demostraciones", donde presentó por primera vez el uso combinado de un ratón, ventanas, hipervínculos y edición colaborativa en tiempo real. Esta demostración sentó las bases de las interfaces gráficas modernas.';
-						image =
-							'https://www.lanacion.com.ar/resizer/v2/una-foto-promocional-del-nls-el-sistema-disenado-RJQ6IGMLUFE7NFHUWAGUW2NWWU.jpg?auth=a03af131b2d85c64bd02546df3256f28c3f0fa8b591015a76f4dbb092dd5aa8a&width=420&height=280&quality=70&smart=true';
-						break;
-					case 'info4':
-						title = '1973 - Xerox Alto';
-						text =
-							'Xerox desarrolló el Alto, la primera computadora personal con una interfaz gráfica de usuario (GUI) basada en ventanas y con soporte para un ratón. Aunque no fue comercialmente exitosa, influyó directamente en el diseño de las computadoras modernas.';
-						image = 'https://www.teknofilo.com/wp-content/uploads/2021/10/Xerox-Alto-1.jpg';
-						break;
-					case 'info5':
-						title = '1984 - Macintosh';
-						text =
-							'Apple lanzó el Macintosh, la primera computadora personal con una interfaz gráfica accesible para el público general. Introdujo el uso de iconos, ventanas y menús desplegables, revolucionando la manera en que las personas interactúan con las computadoras.';
-						image = 'https://ychef.files.bbci.co.uk/1280x720/p0h6vfmf.jpg';
-						break;
-					case 'info6':
-						title = '1990 - World Wide Web';
-						text =
-							'Tim Berners-Lee creó la World Wide Web, un sistema de navegación mediante hipervínculos que permitió acceder a páginas web de manera sencilla. La combinación de navegadores y páginas web impulsó la masificación de internet.';
-						image = 'https://i.blogs.es/8d269d/tim/650_1200.jpg';
-						break;
-					case 'info7':
-						title = '2007 - iPhone';
-						text =
-							'Apple presentó el iPhone, que popularizó las interfaces basadas en pantallas táctiles y gestos. Este dispositivo transformó la forma en que las personas acceden a la información y las aplicaciones, marcando el inicio de la era de los smartphones.';
-						image = 'https://i.blogs.es/608190/650_1000_iphone_3g/450_1000.jpg';
-						break;
-					case 'info8':
-						title = '2010 - Computación Ubicua';
-						text =
-							'La computación ubicua se consolidó con dispositivos como smartwatches, asistentes inteligentes y la Internet de las Cosas (IoT). La tecnología comenzó a integrarse en la vida cotidiana, permitiendo interacciones constantes y personalizadas.';
-						image = 'https://lovtechnology.com/wp-content/uploads/2024/06/Redes-inalambricas-1.jpg';
-						break;
-					case 'info9':
-						title = '2014 - Asistentes de Voz';
-						text =
-							'El lanzamiento de Amazon Alexa y Google Assistant hizo que las interacciones mediante comandos de voz fueran más accesibles y naturales. Estos sistemas utilizan inteligencia artificial para interpretar y responder a las solicitudes de los usuarios.';
-						image = 'https://www.lavanguardia.com/files/image_449_220/uploads/2018/11/06/5fa44d078685f.png';
-						break;
-					case 'info10':
-						title = 'Presente - Realidad Virtual';
-						text =
-							'Dispositivos como Oculus Rift y HoloLens han llevado la interacción humano-computadora a entornos inmersivos de realidad virtual y aumentada. Estas tecnologías permiten nuevas formas de trabajo, entretenimiento y formación mediante experiencias inmersivas.';
-						image = 'https://i.blogs.es/fea3ae/xiaomi-vr/1366_2000.jpg';
-						break;
-				}
+    switch (info) {
+        case 'info1':
+            title = '1945 - Memex';
+            text = 'Vannevar Bush propuso el concepto de Memex, una máquina teórica que permitiría almacenar y recuperar información mediante enlaces asociativos (hipervínculos). Este concepto inspiró la creación de la navegación por internet y la estructura de las páginas web.';
+            image = 'https://s2-techtudo.glbimg.com/khcBybVZ64WqxatwI9qTD1Fx6gg=/0x0:627x429/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/i/m/jmnkS6QsCbeJn6l9BMuA/2013-06-06-gpc20130606-1.jpg';
+            break;
+        case 'info2':
+            title = '1955 - Light Pen';
+            text = 'El Light Pen fue una de las primeras herramientas de entrada directa, utilizada en sistemas como SAGE para interactuar con pantallas CRT mediante detección de luz.';
+            image = 'https://upload.wikimedia.org/wikipedia/commons/1/1f/SAGE_console.jpg';
+            break;
+        case 'info3':
+            title = '1962 - Sketchpad';
+            text = 'Ivan Sutherland desarrolló Sketchpad, el primer programa de diseño gráfico por computadora, permitiendo manipulación directa con un lápiz óptico.';
+            image = 'https://history-computer.com/ModernComputer/Software/Images/Sketchpad.jpg';
+            break;
+        case 'info4':
+            title = '1963 - Mouse';
+            text = 'Douglas Engelbart inventó el ratón, un dispositivo que revolucionó la interacción con las computadoras mediante un cursor controlado manualmente.';
+            image = 'https://iot.purple-sheep.com/images/mouse.png';
+            break;
+        case 'info5':
+            title = '1968 - Gran Demostración';
+            text = 'Douglas Engelbart presentó el NLS, que incluía el uso del ratón, hipertexto y videoconferencia en la famosa "Madre de todas las demostraciones".';
+            image = 'https://www.lanacion.com.ar/resizer/v2/una-foto-promocional-del-nls-el-sistema-disenado-RJQ6IGMLUFE7NFHUWAGUW2NWWU.jpg';
+            break;
+        case 'info6':
+            title = '1964 - Rand Tablet';
+            text = 'El Rand Tablet fue una de las primeras tabletas gráficas, utilizada en proyectos de reconocimiento de escritura y diseño asistido por computadora.';
+            image = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Rand_Tablet.jpg/800px-Rand_Tablet.jpg';
+            break;
+        case 'info7':
+            title = '1973 - Xerox Alto';
+            text = 'Xerox Alto introdujo la primera interfaz gráfica de usuario (GUI), inspirando a sistemas como el Macintosh de Apple y Windows de Microsoft.';
+            image = 'https://www.teknofilo.com/wp-content/uploads/2021/10/Xerox-Alto-1.jpg';
+            break;
+        case 'info8':
+            title = '1977 - Knee Pad';
+            text = 'El Knee Pad fue un prototipo de dispositivo portátil con entrada táctil, desarrollado en el MIT como una exploración temprana de computación móvil.';
+            image = 'https://static.wikia.nocookie.net/retrocomputing/images/d/df/Kneepad-mit.jpg';
+            break;
+        case 'info9':
+            title = '1984 - Macintosh';
+            text = 'Apple lanzó el Macintosh, popularizando las interfaces gráficas de usuario con un diseño intuitivo basado en ventanas y el uso del ratón.';
+            image = 'https://ychef.files.bbci.co.uk/1280x720/p0h6vfmf.jpg';
+            break;
+        case 'info10':
+            title = '1990 - World Wide Web';
+            text = 'Tim Berners-Lee desarrolló la World Wide Web, un sistema de hipervínculos accesibles mediante navegadores, transformando el acceso a la información.';
+            image = 'https://i.blogs.es/8d269d/tim/650_1200.jpg';
+            break;
+        case 'info11':
+            title = '1992 - TrackPoint IBM ThinkPad';
+            text = 'IBM introdujo el TrackPoint, un pequeño joystick en los teclados ThinkPad para navegación precisa sin necesidad de un ratón externo.';
+            image = 'https://i.blogs.es/2b8c8c/trackpoint-ibm-thinkpad/1366_2000.jpg';
+            break;
+        case 'info12':
+            title = '1993 - Apple Newton';
+            text = 'Apple lanzó el Newton, un asistente digital personal (PDA) pionero en reconocimiento de escritura y computación portátil.';
+            image = 'https://upload.wikimedia.org/wikipedia/en/6/6d/Newton_100.jpg';
+            break;
+        case 'info13':
+            title = '2007 - iPhone';
+            text = 'Apple revolucionó la telefonía móvil con el iPhone, combinando una pantalla multitáctil con una interfaz de usuario basada en gestos.';
+            image = 'https://i.blogs.es/608190/650_1000_iphone_3g/450_1000.jpg';
+            break;
+        case 'info14':
+            title = '2010 - Microsoft Kinect';
+            text = 'Microsoft presentó Kinect, un sistema de captura de movimiento sin controladores físicos, ampliando las posibilidades de interacción.';
+            image = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Xbox-360-Kinect-Standalone.jpg/800px-Xbox-360-Kinect-Standalone.jpg';
+            break;
+        case 'info15':
+            title = '2010 - Computación Ubicua';
+            text = 'La computación ubicua describe la integración de la tecnología en la vida cotidiana, con dispositivos interconectados en múltiples entornos.';
+            image = 'https://lovtechnology.com/wp-content/uploads/2024/06/Redes-inalambricas-1.jpg';
+            break;
+        case 'info16':
+            title = '2014 - Asistentes de Voz';
+            text = 'Con Siri, Alexa y Google Assistant, los asistentes de voz han transformado la interacción con dispositivos mediante reconocimiento de lenguaje natural.';
+            image = 'https://www.lavanguardia.com/files/image_449_220/uploads/2018/11/06/5fa44d078685f.png';
+            break;
+        case 'info17':
+            title = 'Presente - Realidad Virtual';
+            text = 'La realidad virtual ha evolucionado con dispositivos como Oculus y HTC Vive, ofreciendo experiencias inmersivas para juegos, educación y entrenamiento.';
+            image = 'https://i.blogs.es/fea3ae/xiaomi-vr/1366_2000.jpg';
+            break;
+        case 'info18':
+            title = 'Presente - Interfaces Cerebro-Computadora';
+            text = 'Las interfaces cerebro-computadora permiten controlar dispositivos mediante señales cerebrales, abriendo nuevas posibilidades en accesibilidad y neurotecnología.';
+            image = 'https://ichef.bbci.co.uk/news/640/cpsprodpb/3495/live/8559c430-7ec4-11ec-bb83-2b4c7f5a1cfb.jpg';
+            break;
+    }
 
-				document.getElementById('popup-title').innerText = title;
-				document.getElementById('popup-text').innerText = text;
-				document.getElementById('popup-image').src = image;
-				document.getElementById('popup').style.display = 'block';
-			}
+    document.getElementById('popup-title').innerText = title;
+    document.getElementById('popup-text').innerText = text;
+    document.getElementById('popup-image').src = image;
+    document.getElementById('popup').style.display = 'block';
+}
+
 
 			function closePopup() {
 				document.getElementById('popup').style.display = 'none';
