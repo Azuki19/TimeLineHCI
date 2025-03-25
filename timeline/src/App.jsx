@@ -1,0 +1,25 @@
+// App.jsx
+import React from "react";
+import Intro from "./components/intro/intro";
+import ScrollSection from "./components/scrollsection/scrollsection";
+import InteractiveSection from "./components/interactivesection/interactivesection";
+import "./App.css";
+
+function App() {
+  return (
+    <div>
+      <Intro />
+      <ScrollSection
+        text1="Antes de las pantallas táctiles, antes del mouse, antes de las computadoras personales..."
+        text2="¿Recuerdas cómo interactuábamos con la tecnología?"
+      />
+      <ScrollSection
+        text1="Desde los primeros intentos de interacción hasta la inteligencia artificial actual, cada avance ha acercado más a las personas y las máquinas."
+        text2="Explora la evolución de esta conexión y descubre cómo llegamos hasta aquí."
+      />
+      <InteractiveSection /> {/* Solo se pasa el componente aquí */}
+    </div>
+  );
+}
+
+export default App;

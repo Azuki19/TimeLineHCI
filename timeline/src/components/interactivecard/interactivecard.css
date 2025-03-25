@@ -1,0 +1,47 @@
+.drag-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+}
+
+#perforada {
+	width: 230px;
+	cursor: grab;
+	transition: transform 0.2s ease, filter 0.2s ease;
+	filter: drop-shadow(0 0 12px rgba(255, 223, 178, 0.8));
+}
+
+#perforada:active {
+	transform: scale(1.08);
+}
+
+#pc {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#pc img {
+	width: 450px;
+	transition: opacity 0.4s ease;
+}
+
+.Era {
+	display: none;
+	opacity: 0;
+	transform: translateY(50px);
+	visibility: hidden;
+	transition: opacity 1s ease, transform 1s ease;
+}
+
+.Era.active {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	opacity: 1;
+	transform: translateY(0);
+	visibility: visible;
+}

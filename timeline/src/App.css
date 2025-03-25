@@ -6,11 +6,16 @@
 }
 
 body {
-	background: black;
+  background-color: rgba(0, 0, 0, 0.392);
 	color: white;
 	font-family: 'Orbitron', sans-serif;
 	overflow: auto; /* Scroll habilitado inicialmente */
 	scroll-behavior: smooth;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
 
 /* ======== FONDO PARALLAX ======== */
@@ -33,16 +38,14 @@ body::before {
 	}
 }
 
+
 /* ======== SECCIÓN DE INTRODUCCIÓN ======== */
 .intro {
 	min-height: 100vh;
 	display: flex;
-
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 400px;
 	text-align: center;
 	padding: 10px;
 }
@@ -54,11 +57,11 @@ h1 {
 	margin-bottom: 10px;
 }
 
-.antes{
-margin-top: 150px;
+.antes {
+	margin-top: 150px;
 }
 
-.desde{
+.desde {
 	margin-top: 100px;
 	margin-bottom: 20px;
 }
@@ -89,13 +92,14 @@ margin-top: 150px;
 
 /* ======== SECCIONES ======== */
 section {
-	min-height: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	margin-top: 50px;
+	min-height: auto;
+	width: 100%;
 }
 
 h3 {
@@ -109,7 +113,9 @@ h3 {
 .drag-container {
 	display: flex;
 	align-items: center;
+	justify-content: center; /* Centra los elementos horizontalmente */
 	gap: 10px;
+	width: 100%;
 }
 
 #perforada {
@@ -124,6 +130,12 @@ h3 {
 }
 
 /* Imagen del PC */
+#pc {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 #pc img {
 	width: 450px;
 	transition: opacity 0.4s ease;
@@ -134,19 +146,22 @@ h3 {
 }
 
 .arrastra {
-	margin-bottom: 50px;
 	margin-top: 300px;
+	margin-bottom: 50px;
 }
 
 /* ======== ANIMACIÓN DE FLECHAS ======== */
 .arrow-container {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-size: 40px;
 	color: rgba(255, 255, 255, 0.3);
 }
 
 .arrow {
 	animation: arrowBlink 1.2s infinite;
+	margin: 0 5px;
 }
 
 .arrow:nth-child(2) {
@@ -178,20 +193,12 @@ h3 {
 	}
 }
 
-.Era1 {
-	display: none; /* Ocultar inicialmente */
-	opacity: 0;
-	transform: translateY(50px);
-	visibility: hidden;
-	transition: opacity 1s ease, transform 1s ease;
+.Era {
+  display: none; /* Ocultar inicialmente */
 }
 
-.Era1.active {
-	display: flex; /* Mostrar con flex cuando esté activo */
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	opacity: 1;
-	transform: translateY(0);
-	visibility: visible;
+.Era.active {
+  display: block; /* Solo se muestra cuando está activa */
+  opacity: 1;
+  transform: translateY(0);
 }

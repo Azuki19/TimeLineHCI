@@ -1,0 +1,51 @@
+.timeline-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.timeline {
+  position: relative;
+  width: 4px;
+  background-color: #000;
+  height: 200vh; /* Línea de tiempo más larga */
+  min-height: 800px;
+}
+
+.user-marker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  transition: top 0.1s ease-out; /* Movimiento más suave */
+}
+
+.timeline-card {
+  position: absolute;
+  width: 250px;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.timeline-card.left {
+  left: -280px;
+}
+
+.timeline-card.right {
+  left: 50px;
+}
+
+.timeline-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
