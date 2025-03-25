@@ -1,21 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const perforada = document.getElementById("perforada");
-  const pc = document.getElementById("pc");
-  const era1 = document.querySelector(".Era1");
-
-  // Evento para permitir soltar la tarjeta en el PC
-  pc.addEventListener("dragover", (event) => {
-      event.preventDefault();
-  });
-
-  // Evento al soltar la tarjeta en el PC
-  pc.addEventListener("drop", (event) => {
-      event.preventDefault();
-
-      // Agregar contenido a la sección ERA 1 (solo si está vacía)
-      if (!era1.innerHTML.trim()) {
-          era1.innerHTML = `
-      <style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea de Tiempo Interactiva</title>
+    <style>
         /* ======== RESET GENERAL ======== */
         * {
             margin: 0;
@@ -237,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let userBox = document.getElementById("userBox");
 
             progressBar.style.width = scrollPercent + "%";
-            mario.style.left = \`calc(\${scrollPercent}% - 20px)\`
+            mario.style.left = `calc(${scrollPercent}% - 20px)`;
 
             // Mueve el cuadrado negro más lento
             let maxPosition = documentHeight * 0.9;
@@ -259,10 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
             window.dispatchEvent(new Event("scroll"));
         });
     </script>
-          `;
-      }
 
-      // Agregar la clase active para mostrar la sección
-      era1.classList.add("active");
-  });
-});
+</body>
+</html>

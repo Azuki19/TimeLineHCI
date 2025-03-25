@@ -42,7 +42,7 @@ body::before {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 500px;
+	height: 400px;
 	text-align: center;
 	padding: 10px;
 }
@@ -54,14 +54,24 @@ h1 {
 	margin-bottom: 10px;
 }
 
+.antes{
+margin-top: 150px;
+}
+
+.desde{
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+
 .desliza {
 	font-size: 18px;
-	margin-top: 20px;
+	margin-top: 50px;
 	animation: blink 1.5s infinite alternate;
 }
 
 .recuerdas {
-	margin-top: 50px;
+	margin-top: 100px;
+	margin-bottom: 300px;
 }
 
 .explora {
@@ -85,6 +95,7 @@ section {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	margin-top: 50px;
 }
 
 h3 {
@@ -124,6 +135,7 @@ h3 {
 
 .arrastra {
 	margin-bottom: 50px;
+	margin-top: 300px;
 }
 
 /* ======== ANIMACIÓN DE FLECHAS ======== */
