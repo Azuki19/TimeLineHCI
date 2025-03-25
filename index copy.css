@@ -1,0 +1,181 @@
+body {
+	font-family: Arial, sans-serif;
+	background: linear-gradient(135deg, #1e3c72, #2a5298);
+	color: white;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.nav-button {
+	position: absolute;
+	top: 50%;
+	background-color: white;
+	color: black;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 20px;
+	border-radius: 50%;
+}
+
+.nav-button:hover {
+	background-color: #fefefe;
+	transform: scale(1.1);
+}
+
+.nav-left {
+	left: 10px;
+}
+.nav-right {
+	right: 10px;
+}
+
+.timeline-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+	max-width: 1200px;
+	background: rgba(255, 255, 255, 0.1);
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-wrapper {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.timeline {
+	display: flex;
+	overflow-x: auto;
+	padding: 20px 0;
+	white-space: nowrap;
+	border-bottom: 5px solid white;
+	scroll-behavior: smooth;
+}
+
+.timeline::-webkit-scrollbar {
+	display: none;
+}
+
+.event {
+	display: inline-block;
+	width: 150px;
+	text-align: center;
+	margin: 0 20px;
+	position: relative;
+}
+
+.event img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 3px solid white;
+	margin-bottom: 10px;
+	cursor: pointer;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event img:hover {
+	transform: scale(1.1);
+	box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+.event p {
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+}
+
+.popup {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 10;
+}
+
+.popup-content {
+	background: white;
+	color: black;
+	padding: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+	max-width: 400px;
+	width: 90%; /* Para que sea responsive */
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+	text-align: center;
+}
+
+.popup img {
+	width: 100%; /* Imagen ajustada al ancho del popup */
+	max-height: 250px;
+	object-fit: cover;
+	border-radius: 8px;
+	margin-bottom: 12px;
+	border: 3px solid #1e3c72;
+}
+
+.popup h2 {
+	font-size: 20px;
+	color: #1e3c72;
+	margin-bottom: 8px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.popup p {
+	font-size: 16px;
+	color: #333;
+	line-height: 1.5;
+	margin-top: 5px;
+	text-align: justify;
+}
+
+/* Botón de cierre */
+.close {
+	cursor: pointer;
+	font-size: 24px;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: red;
+}
+
+.close:hover {
+	color: darkred;
+}
+
+/* ✅ Diseño responsivo para pantallas pequeñas */
+@media (max-width: 500px) {
+	.popup-content {
+		width: 95%; /* Ocupa más espacio en pantallas pequeñas */
+		padding: 15px;
+	}
+
+	.popup img {
+		max-height: 180px;
+	}
+
+	.popup h2 {
+		font-size: 18px;
+	}
+
+	.popup p {
+		font-size: 14px;
+	}
+}

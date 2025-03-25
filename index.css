@@ -1,181 +1,164 @@
-body {
-	font-family: Arial, sans-serif;
-	background: linear-gradient(135deg, #1e3c72, #2a5298);
-	color: white;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+/* ======== ESTILOS GENERALES ======== */
+* {
 	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.nav-button {
-	position: absolute;
-	top: 50%;
-	background-color: white;
-	color: black;
-	border: none;
-	padding: 10px;
-	cursor: pointer;
-	font-size: 20px;
-	border-radius: 50%;
+body {
+	background: black;
+	color: white;
+	font-family: 'Orbitron', sans-serif;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 
-.nav-button:hover {
-	background-color: #fefefe;
-	transform: scale(1.1);
+/* ======== FONDO PARALLAX ======== */
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background: url('https://www.transparenttextures.com/patterns/stardust.png');
+	opacity: 0.5;
+	z-index: -1;
+	animation: starsMove 60s linear infinite;
 }
 
-.nav-left {
-	left: 10px;
-}
-.nav-right {
-	right: 10px;
+@keyframes starsMove {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -1000px -1000px;
+	}
 }
 
-.timeline-container {
+/* ======== SECCIÓN DE INTRODUCCIÓN ======== */
+.intro {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 90%;
-	max-width: 1200px;
-	background: rgba(255, 255, 255, 0.1);
-	padding: 20px;
-	border-radius: 15px;
-	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.timeline-wrapper {
-	position: relative;
-	width: 100%;
-	overflow: hidden;
-}
-
-.timeline {
-	display: flex;
-	overflow-x: auto;
-	padding: 20px 0;
-	white-space: nowrap;
-	border-bottom: 5px solid white;
-	scroll-behavior: smooth;
-}
-
-.timeline::-webkit-scrollbar {
-	display: none;
-}
-
-.event {
-	display: inline-block;
-	width: 150px;
+	height: 500px;
 	text-align: center;
-	margin: 0 20px;
-	position: relative;
+	padding: 10px;
 }
 
-.event img {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	border: 3px solid white;
+h1 {
+	font-size: 42px;
+	max-width: 800px;
+	animation: fadeIn 1s ease-in-out;
 	margin-bottom: 10px;
-	cursor: pointer;
-	transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.event img:hover {
-	transform: scale(1.1);
-	box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5);
+.desliza {
+	font-size: 18px;
+	margin-top: 20px;
+	animation: blink 1.5s infinite alternate;
 }
 
-.event p {
-	font-size: 14px;
-	font-weight: bold;
-	color: white;
+.recuerdas{
+	margin-top: 50px;
 }
 
-.popup {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.7);
-	z-index: 10;
+.explora{
+	margin-top: 70px;
 }
 
-.popup-content {
-	background: white;
-	color: black;
-	padding: 20px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	border-radius: 10px;
-	max-width: 400px;
-	width: 90%; /* Para que sea responsive */
-	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+@keyframes blink {
+	0% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* ======== SECCIONES ======== */
+section {
+	min-height: 900px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 }
 
-.popup img {
-	width: 100%; /* Imagen ajustada al ancho del popup */
-	max-height: 250px;
-	object-fit: cover;
-	border-radius: 8px;
-	margin-bottom: 12px;
-	border: 3px solid #1e3c72;
+h3 {
+	font-size: 28px;
+	max-width: 650px;
+	animation: fadeIn 1s ease-in-out;
+	margin-bottom: 10px;
 }
 
-.popup h2 {
-	font-size: 20px;
-	color: #1e3c72;
-	margin-bottom: 8px;
-	font-weight: bold;
-	text-transform: uppercase;
+/* ======== TARJETA PERFORADA ======== */
+.drag-container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
-.popup p {
-	font-size: 16px;
-	color: #333;
-	line-height: 1.5;
-	margin-top: 5px;
-	text-align: justify;
+#perforada {
+	width: 230px;
+	cursor: grab;
+	transition: transform 0.2s ease, filter 0.2s ease;
+	filter: drop-shadow(0 0 12px rgba(255, 223, 178, 0.8));
 }
 
-/* Botón de cierre */
-.close {
-	cursor: pointer;
-	font-size: 24px;
-	position: absolute;
-	top: 10px;
-	right: 15px;
-	color: red;
+#perforada:active {
+	transform: scale(1.08);
 }
 
-.close:hover {
-	color: darkred;
+/* Imagen del PC */
+#pc img {
+	width: 450px;
+	transition: opacity 0.4s ease;
 }
 
-/* ✅ Diseño responsivo para pantallas pequeñas */
-@media (max-width: 500px) {
-	.popup-content {
-		width: 95%; /* Ocupa más espacio en pantallas pequeñas */
-		padding: 15px;
+#pc img.hidden {
+	opacity: 0;
+}
+
+.arrastra {
+	margin-bottom: 50px;
+}
+
+/* ======== ANIMACIÓN DE FLECHAS ======== */
+.arrow-container {
+	display: flex;
+	font-size: 40px;
+	color: rgba(255, 255, 255, 0.3);
+}
+
+.arrow {
+	animation: arrowBlink 1.2s infinite;
+}
+
+.arrow:nth-child(2) {
+	animation-delay: 0.4s;
+}
+.arrow:nth-child(3) {
+	animation-delay: 0.8s;
+}
+
+@keyframes arrowBlink {
+	0%,
+	100% {
+		color: rgba(255, 255, 255, 0.3);
 	}
-
-	.popup img {
-		max-height: 180px;
+	50% {
+		color: white;
 	}
+}
 
-	.popup h2 {
-		font-size: 18px;
+/* ======== EFECTO FADE-IN ======== */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(15px);
 	}
-
-	.popup p {
-		font-size: 14px;
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
