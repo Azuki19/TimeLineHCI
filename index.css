@@ -9,7 +9,7 @@ body {
 	background: black;
 	color: white;
 	font-family: 'Orbitron', sans-serif;
-	overflow-x: hidden;
+	overflow: auto; /* Scroll habilitado inicialmente */
 	scroll-behavior: smooth;
 }
 
@@ -35,6 +35,9 @@ body::before {
 
 /* ======== SECCIÓN DE INTRODUCCIÓN ======== */
 .intro {
+	min-height: 100vh;
+	display: flex;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -57,11 +60,11 @@ h1 {
 	animation: blink 1.5s infinite alternate;
 }
 
-.recuerdas{
+.recuerdas {
 	margin-top: 50px;
 }
 
-.explora{
+.explora {
 	margin-top: 70px;
 }
 
@@ -76,7 +79,7 @@ h1 {
 
 /* ======== SECCIONES ======== */
 section {
-	min-height: 900px;
+	min-height: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -161,4 +164,22 @@ h3 {
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+
+.Era1 {
+	display: none; /* Ocultar inicialmente */
+	opacity: 0;
+	transform: translateY(50px);
+	visibility: hidden;
+	transition: opacity 1s ease, transform 1s ease;
+}
+
+.Era1.active {
+	display: flex; /* Mostrar con flex cuando esté activo */
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	opacity: 1;
+	transform: translateY(0);
+	visibility: visible;
 }
