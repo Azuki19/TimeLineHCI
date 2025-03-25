@@ -6,7 +6,6 @@
 }
 
 body {
-  background-color: rgba(0, 0, 0, 0.392);
 	color: white;
 	font-family: 'Orbitron', sans-serif;
 	overflow: auto; /* Scroll habilitado inicialmente */
@@ -37,7 +36,6 @@ body::before {
 		background-position: -1000px -1000px;
 	}
 }
-
 
 /* ======== SECCIÓN DE INTRODUCCIÓN ======== */
 .intro {
@@ -194,11 +192,11 @@ h3 {
 }
 
 .Era {
-  display: none; /* Ocultar inicialmente */
+	display: none; /* Ocultar inicialmente */
 }
 
 .Era.active {
-  display: block; /* Solo se muestra cuando está activa */
-  opacity: 1;
-  transform: translateY(0);
+	display: block; /* Solo se muestra cuando está activa */
+	opacity: 1;
+	transform: translateY(0);
 }

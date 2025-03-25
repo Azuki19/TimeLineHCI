@@ -1,92 +1,103 @@
-import React, { useEffect, useState, useRef } from "react";
-import "./era1.css";
+import React, { useEffect, useState, useRef } from 'react';
+import './era1.css';
 
 const milestones = [
-  { img: "https://via.placeholder.com/150", text: "Evento 1" },
-  { img: "https://via.placeholder.com/150", text: "Evento 2" },
-  { img: "https://via.placeholder.com/150", text: "Evento 3" },
-  { img: "https://via.placeholder.com/150", text: "Evento 4" },
+	{
+		año: '1945',
+		nombre: 'El Memex y la primera idea de hipertexto',
+		img: 'https://proyectoidis.org/wp-content/uploads/2014/10/memex.png',
+		text1:
+			'Vannevar Bush propuso el Memex, un sistema teórico que permitiría almacenar y recuperar información de manera flexible mediante enlaces asociativos.',
+		text2:
+			'Se conceptualizó como un dispositivo mecánico capaz de organizar información en estructuras similares a las conexiones neuronales humanas.',
+		text3: 'Referencia: As We May Think - The Atlantic',
+	},
+	{
+		año: '1950-1970',
+		nombre: 'Uso de tarjetas perforadas en IBM y la computación comercial',
+		img: 'https://www.publico.es/files/image_horizontal_mobile/uploads/2024/11/18/673b0300e68e9.jpeg',
+		text1: 'Durante esta época, las computadoras de IBM usaban tarjetas perforadas para ingresar datos y programas.',
+		text2:
+			'Funcionamiento: Los usuarios perforaban tarjetas con comandos e información, luego las insertaban en un lector de tarjetas.',
+		text3:
+			'Este sistema fue esencial hasta la llegada de teclados y pantallas interactivas en las décadas de 1970 y 1980.',
+	},
+	{
+		año: '1963',
+		nombre: 'Sketchpad y el Light Pen',
+		img: 'https://i.ytimg.com/vi/hB3jQKGrJo0/sddefault.jpg?sqp=-oaymwEmCIAFEOAD8quKqQMa8AEB-AH-BIAC4AOKAgwIABABGGYgZihmMA8=&rs=AOn4CLD1bo7ZNsOMm-3aDcKnDux3i0Ka8w',
+		text1: 'Ivan Sutherland desarrolló Sketchpad, el primer software de diseño gráfico interactivo.',
+		text2:
+			'Este sistema permitió la manipulación de gráficos mediante una interfaz visual, sentando las bases del CAD.',
+		text3: 'Referencia: Sketchpad y su impacto en la computación gráfica',
+	},
 ];
 
 const Era1 = () => {
-  const [markerPosition, setMarkerPosition] = useState(0);
-  const timelineRef = useRef(null);
-  const lastScrollY = useRef(0);
-  const lastPosition = useRef(0); // Para guardar la última posición de la bolita
+	const [markerPosition, setMarkerPosition] = useState(0);
+	const [expandedCard, setExpandedCard] = useState(null);
+	const timelineRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!timelineRef.current) return;
+	useEffect(() => {
+		const handleScroll = () => {
+			if (!timelineRef.current) return;
 
-      const timeline = timelineRef.current;
-      const rect = timeline.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const timelineHeight = rect.height;
+			const timeline = timelineRef.current;
+			const rect = timeline.getBoundingClientRect();
+			const windowHeight = window.innerHeight;
+			const timelineHeight = rect.height;
 
-      // Solo actualizar si la línea de tiempo está en la pantalla
-      if (rect.top >= windowHeight || rect.bottom <= 0) return;
+			// Calcular la posición del scroll dentro de la línea de tiempo
+			const scrolledInsideTimeline = Math.min(Math.max(windowHeight / 2 - rect.top, 0), timelineHeight);
+			const newPosition = (scrolledInsideTimeline / timelineHeight) * 100;
+			const boundedPosition = Math.max(0, Math.min(newPosition, 100));
 
-      // Determinar cuánto ha avanzado dentro de la línea
-      const scrolledInsideTimeline = Math.min(
-        Math.max(windowHeight - rect.top, 0),
-        timelineHeight
-      );
+			// Aplicar la nueva posición sin retrasos ni interpolaciones
+			setMarkerPosition(boundedPosition);
+		};
 
-      // Calcular la nueva posición basada en el desplazamiento
-      const newPosition = (scrolledInsideTimeline / timelineHeight) * 100;
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 
-      // Asegurarse de que la bolita no se salga de la línea (entre 0% y 100%)
-      const boundedPosition = Math.max(0, Math.min(newPosition, 100));
+	const toggleCard = (index) => {
+		setExpandedCard(expandedCard === index ? null : index);
+	};
 
-      // Calcular la dirección del scroll (hacia abajo o hacia arriba)
-      const direction = window.scrollY > lastScrollY.current ? 1 : -1;
+	return (
+		<div className='timeline-container'>
+			<div className='timeline' ref={timelineRef}>
+				<img
+					src='https://pbs.twimg.com/media/Gm5pmPYXMAEPWLV?format=png&name=small'
+					alt='Máquina de escribir'
+					className='user-marker'
+					style={{ top: `${markerPosition}%` }}
+				/>
 
-      // Si el scroll va hacia arriba, queremos que la bolita suba rápido
-      const speedFactor = direction === -1 ? 0.3 : 0.1; // Aumenta la velocidad al subir
-
-      // Hacer que la bolita se mueva de manera suave hacia la nueva posición
-      const diff = boundedPosition - lastPosition.current;
-
-      // Controlar que el movimiento sea suave y no sobrepasar el límite
-      const smoothMovement = lastPosition.current + diff * speedFactor;
-
-      lastPosition.current = smoothMovement;
-
-      // Actualizar la posición de la bolita
-      setMarkerPosition(smoothMovement);
-
-      lastScrollY.current = window.scrollY; // Actualiza la última posición del scroll
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <div className="timeline-container">
-      <div className="timeline" ref={timelineRef}>
-        <div
-          className="user-marker"
-          style={{
-            top: `${markerPosition}%`, // La bolita sigue el progreso en la línea
-          }}
-        ></div>
-
-        {milestones.map((milestone, index) => (
-          <div
-            key={index}
-            className={`timeline-card ${index % 2 === 0 ? "left" : "right"} ${
-              markerPosition > (index + 1) * (100 / milestones.length) ? "visible" : ""
-            }`}
-            style={{ top: `${(index + 1) * (100 / milestones.length)}%` }}
-          >
-            <img src={milestone.img} alt={milestone.text} />
-            <p>{milestone.text}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+				{milestones.map((milestone, index) => (
+					<div
+						key={index}
+						className={`timeline-card ${index % 2 === 0 ? 'left' : 'right'} ${
+							markerPosition > index * (100 / milestones.length) ? 'visible' : ''
+						} ${expandedCard === index ? 'expanded' : ''}`}
+						style={{ top: `${(index + 1) * (100 / milestones.length)}%` }}
+						onClick={() => toggleCard(index)}
+					>
+						<img src={milestone.img} alt={milestone.nombre} />
+						<h3>{milestone.nombre}</h3>
+						<p>
+							<strong>{milestone.año}</strong>
+						</p>
+						<p>{milestone.text1}</p>
+						<p>{milestone.text2}</p>
+						<p>{milestone.text3}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	);
 };
 
 export default Era1;

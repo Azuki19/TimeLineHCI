@@ -1,51 +1,91 @@
 .timeline-container {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 50px 0;
+	background-color: rgba(0, 0, 0, 0.392);
+	height: 4900px;
+	position: relative;
+	width: 3000px;
+	display: flex;
+	justify-content: center;
 }
 
 .timeline {
-  position: relative;
-  width: 4px;
-  background-color: #000;
-  height: 200vh; /* Línea de tiempo más larga */
-  min-height: 800px;
+	position: relative;
+	width: 90px;
+	background-color: #000;
+	height: 400vh; /* 🔥 Aumenta la altura significativamente */
+	min-height: 3500px; /* 🔥 Ajusta el mínimo para que no se acorte */
 }
 
 .user-marker {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  border-radius: 50%;
-  transition: top 0.1s ease-out; /* Movimiento más suave */
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	height: auto;
+	transition: top 0.2s linear;
 }
 
 .timeline-card {
-  position: absolute;
-  width: 250px;
-  padding: 15px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+	position: absolute;
+	width: 350px; /* 🔥 Se agrandaron los cuadros */
+	padding: 20px;
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 0.5s ease-out, transform 0.5s ease-out, width 0.3s ease-in-out;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.timeline-card img {
+	width: 100%;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: transform 0.3s ease-in-out;
+}
+
+.timeline-card img:hover {
+	transform: scale(1.05);
 }
 
 .timeline-card.left {
-  left: -280px;
+	left: -520px; /* Aumenta la separación */
 }
 
 .timeline-card.right {
-  left: 50px;
+	left: 250px; /* Aumenta la separación */
+}
+
+.timeline-card {
+	max-width: 350px; /* 🔥 Evita que crezca demasiado */
 }
 
 .timeline-card.visible {
-  opacity: 1;
-  transform: translateY(0);
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.timeline-card h3 {
+	margin: 5px 0;
+	font-size: 1.3em;
+	color: #333;
+}
+
+.timeline-card p {
+	font-size: 1em;
+	color: #555;
+	margin: 3px 0;
+	display: none; /* 🔥 Oculta la información por defecto */
+}
+
+/* 🔥 Cuando la tarjeta está expandida, muestra la información */
+.timeline-card.expanded {
+	width: 400px;
+	background: #f8f8f8;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-card.expanded p {
+	display: block;
 }
