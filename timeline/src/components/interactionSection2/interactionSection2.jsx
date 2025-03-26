@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './interactionSection2.css';
-import Era2 from '../era2/era2';
+import Timeline2 from '../era2/era2';
 
 const InteractiveSection2 = () => {
 	const [activo, setActivo] = useState(false);
@@ -11,7 +11,8 @@ const InteractiveSection2 = () => {
 
 	return (
 		<section className='scroll-section-interactive'>
-			<h3 className='gira'>Da click para mover el joystick y avanzar en el tiempo</h3>
+			<h3 className='arrastra'>Para vajar a la Era Pre Interactiva, arrastra la tarjeta perforable e ingresa los datos al computador</h3>
+
 			<div className='switch-container' onClick={toggleSwitch}>
 				<img
 					src={
@@ -23,7 +24,7 @@ const InteractiveSection2 = () => {
 					className='switch-image'
 				/>
 			</div>
-			{activo && <Era2 />}
+			{activo && <Timeline2 />}
 		</section>
 	);
 };

@@ -1,0 +1,219 @@
+.timeline-container {
+	color: #27110b;
+	height: 2900px;
+	width: max-content;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.timeline {
+	top: 0;
+	position: relative;
+	width: 90px;
+	background-color: #8EBAAE;
+	height: 1010px;
+	min-height: 2300px;
+}
+
+.user-marker {
+
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 120px;
+	height: auto;
+	transition: top 0.2s linear;
+
+}
+
+.timeline-item {
+
+	position: absolute;
+	width: 400px;
+	text-align: center;
+}
+
+/* 🔥 Animación para el título y el año */
+.tituloyeso {
+	padding: 5px;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	max-width: 350px;
+	overflow: hidden;
+}
+
+/* 🔥 Cuando la tarjeta está expandida, el título y el año también crecen */
+.tituloyeso.expanded {
+	color: #27110b;
+	padding: 15px;
+	max-width: 400px;
+}
+
+.timeline-title {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.timeline-year {
+	font-size: 48px;
+	font-weight: bold;
+}
+
+.timeline-card {
+	width: 400px;
+	padding: 20px;
+	background: #EC8481;
+	color: #27110b;
+	border-radius: 3px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+	transition: width 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.5s ease-out, transform 0.5s ease-out;
+	cursor: pointer;
+	overflow: hidden;
+	opacity: 0;
+	transform: translateY(50px);
+}
+
+/* 🔥 Los párrafos están ocultos por defecto */
+.card-content p {
+	margin-top: 20px;
+	display: none;
+}
+
+/* 🔥 Animación de aparición */
+.timeline-card.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* 🔥 La tarjeta y el título se expanden juntos */
+.timeline-card.expanded {
+	width: 400px;
+	background: #EC8481;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-card.expanded .card-content p {
+	display: block;
+}
+.timeline-item.left {
+	left: 200px; /* Mueve la tarjeta de izquierda a la derecha */
+}
+
+.timeline-item.right {
+	left: -510px; /* Mueve la tarjeta de derecha a la izquierda */
+}
+
+.timeline-card img {
+	width: 100%;
+	border-radius: 8px;
+	transition: transform 0.3s ease-in-out;
+}
+
+.timeline-card img:hover {
+	transform: scale(1.05);
+}
+
+.title-container {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+/* 🔥 Estilización del icono de click */
+.click-icon {
+	width: 70px;
+	height: 70px;
+	margin: 20px; /* Espaciado entre el icono y el título */
+	transform: rotate(180deg) scale(1);
+	animation: click-bounce 1.2s infinite alternate ease-in-out;
+	opacity: 1; /* Siempre visible */
+	cursor: url('./assets/manito.png') 16 16, pointer;
+}
+
+/* 🔥 Animación para que el ícono rebote suavemente */
+@keyframes click-bounce {
+	0% {
+		transform: rotate(180deg) scale(1);
+	}
+	100% {
+		transform: rotate(170deg) scale(1.2);
+	}
+}
+
+/* 🔥 Asegurar que el icono y el título estén alineados */
+.title-container {
+	cursor: url('./assets/manito.png') 16 16, pointer;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start; /* Mantiene la alineación correcta */
+}
+
+/* 🔥 Cuando la tarjeta ha sido clickeada, se centra el texto */
+.tituloyeso.clicked .title-container {
+	cursor: url('./assets/manito.png') 16 16, pointer;
+	justify-content: center; /* Centrar año y título */
+}
+
+.tituloyeso.clicked .timeline-year {
+	margin-left: 0; /* Quitar espacio adicional */
+	text-align: center; /* Asegurar alineación */
+}
+
+.brazo {
+	position: absolute;
+	width: 110px; /* Longitud del brazo */
+	height: 50px; /* Grosor del brazo */
+	background-color: #8EBAAE;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/* 🔥 Brazo para la izquierda */
+.brazo-left {
+	left: calc(-110px); /* Pegar el brazo a la tarjeta */
+}
+
+/* 🔥 Brazo para la derecha */
+.brazo-right {
+	right: calc(-110px);
+}
+
+a,
+button,
+.interactivo,
+input[type='submit'],
+input[type='button'],
+input[type='checkbox'],
+input[type='radio'],
+label,
+select,
+.img-clicable,
+.card,
+.drag-container,
+.draggable {
+	cursor: url('./assets/manito.png') 16 16, pointer;
+}
+
+.bienvenida{
+	color: #000;
+	font-size: 24px;
+	margin-bottom: 100px;
+}
+
+.pcfinal{
+	width: 140px;
+	height: 140px;
+}
+
+
+.section2, .section3, .section4 {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.section2.visible, .section3.visible, .section4.visible {
+  opacity: 1;
+}
