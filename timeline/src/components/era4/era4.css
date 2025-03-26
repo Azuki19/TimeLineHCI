@@ -32,3 +32,15 @@
 	opacity: 0;
 	transform: scale(0.8);
 }
+
+.timeline-container4{
+	height: 2500px;
+}
+
+.timeline4{
+	position: relative;
+  width: 120px; /* Un poco más de ancho */
+  background-color: #0680C9;
+  height: auto;
+  min-height: 2000px; /* Ajusta según la cantidad de elementos */
+}

@@ -16,23 +16,15 @@ const milestones = [
   {
     año: "1972",
     nombre: "La Tableta Gráfica: El nacimiento del dibujo digital",
-    img: "https://i.blogs.es/61936c/sin-titulo/500_333.jpeg",
+    img: "https://pbs.twimg.com/media/Gm-ZQZXWYAANlIv?format=png&name=small",
     text1: "La primera tableta gráfica comercial fue desarrollada en 1972 con el objetivo de permitir la interacción directa con una computadora a través de una superficie de dibujo. Este dispositivo se inspiró en experimentos anteriores de reconocimiento de escritura y gráficos, y sentó las bases para la industria del diseño digital.",
     text2: "Permitió a los diseñadores gráficos e ilustradores trabajar en un entorno digital con mayor precisión que con un ratón. Su tecnología inicial utilizaba un lápiz óptico y una superficie sensible a la presión.",
     text3: "Actualmente, se usan en diseño gráfico, arquitectura, videojuegos y cine.",
   },
   {
-    año: "1968",
-    nombre: "El Ratón",
-    img: "https://nachoherraiz.wordpress.com/wp-content/uploads/2011/12/el-primer-raton.png",
-    text1: "Douglas Engelbart presentó el primer mouse en La Madre de Todas las Demos, revolucionando la manera en que los usuarios interactúan con computadoras.",
-    text2: "Su invención permitió una navegación más intuitiva en interfaces gráficas, estableciendo un estándar de interacción.",
-    text3: "Referencia: Demo de Douglas Engelbart",
-  },
-  {
     año: "1973",
     nombre: "Xerox Alto: La primera computadora con GUI",
-    img: "https://freight.cargo.site/t/original/i/3109c60c55ebdac24b725546764aff15c7b8a10ab737d9722e774dbe3b8c6936/grafacon.jpg",
+    img: "https://pbs.twimg.com/media/Gm-ZXU1XUAAgGYD?format=png&name=small",
     text1: "El Xerox Alto fue una computadora revolucionaria desarrollada en el PARC (Palo Alto Research Center) de Xerox. Aunque nunca se vendió comercialmente, fue la primera máquina en utilizar una Interfaz Gráfica de Usuario (GUI) basada en ventanas, iconos y menús desplegables.",
     text2: "Introducción del paradigma WIMP (Windows, Icons, Menus, Pointer). Uso del primer mouse como dispositivo principal de interacción.",
     text3: "Referencia: Xerox Alto en el Computer History Museum",
@@ -40,7 +32,7 @@ const milestones = [
 	{
     año: "1981",
     nombre: "Xerox 8100 Star Information System: La primera GUI comercial",
-    img: "https://freight.cargo.site/t/original/i/3109c60c55ebdac24b725546764aff15c7b8a10ab737d9722e774dbe3b8c6936/grafacon.jpg",
+    img: "https://pbs.twimg.com/media/Gm-aSCrXQAAoqDh?format=png&name=small",
     text1: "El Xerox Star 8010 fue la primera computadora comercial que implementó una Interfaz Gráfica de Usuario (GUI) de manera masiva. Su sistema operaba completamente bajo el paradigma WIMP.",
     text2: "Uso de metáforas visuales como el escritorio, archivos y carpetas virtuales.",
     text3: " Aunque no fue un éxito comercial, estableció los fundamentos para las GUIs de Apple y Microsoft, convirtiéndose en el estándar de interacción digital.",
@@ -48,7 +40,7 @@ const milestones = [
 	{
     año: "1983",
     nombre: "Apple Lisa y la evolución de la GUI",
-    img: "https://freight.cargo.site/t/original/i/3109c60c55ebdac24b725546764aff15c7b8a10ab737d9722e774dbe3b8c6936/grafacon.jpg",
+    img: "https://pbs.twimg.com/media/Gm-aTKKWQAE5Ps0?format=png&name=small",
     text1: "Apple Lisa fue la primera computadora personal en comercializar una GUI. Introdujo la estructura de archivos y carpetas organizadas visualmente, facilitando la navegación y gestión de documentos digitales.",
     text2: "Primera computadora en ofrecer una GUI accesible al público general. Implementación de menús desplegables y múltiples ventanas. Uso de disquetes para almacenamiento y gestión de archivos.",
     text3: "  Lisa sentó las bases para el Macintosh (1984) y consolidó el concepto de interfaz gráfica en el mercado de consumo.",

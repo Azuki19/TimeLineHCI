@@ -273,3 +273,11 @@ img,
 	color: black;
 }
 
+.bg5{
+	background-color: #007AFF;
+	width: 1400px;
+
+	border-radius: 5PX;
+	margin-bottom: 20px;
+	color: black;
+}

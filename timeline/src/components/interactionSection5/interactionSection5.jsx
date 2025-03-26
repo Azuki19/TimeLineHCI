@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './interactionSection5.css';
-import Era5 from '../era5/era5';
+import Timeline5 from '../era5/era5';
 
 const InteractiveSection5 = () => {
 	const [desbloqueado, setDesbloqueado] = useState(false);
@@ -67,7 +67,7 @@ const InteractiveSection5 = () => {
 			</div>
 
 			{/* Mostrar la siguiente era después de desbloquear */}
-			{desbloqueado && <Era5 />}
+			{desbloqueado && <Timeline5 />}
 		</section>
 	);
 };

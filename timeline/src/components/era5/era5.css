@@ -1,0 +1,23 @@
+.user-markerr {
+
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	height: auto;
+	transition: top 0.2s linear;
+
+}
+
+.timeline-container5{
+  height: 4500px;
+}
+
+
+.timeline5 {
+  position: relative;
+  width: 120px; /* Un poco más de ancho */
+  background-color: #0680C9;
+  height: auto;
+  min-height: 4000px; /* Ajusta según la cantidad de elementos */
+}
