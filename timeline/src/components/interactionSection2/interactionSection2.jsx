@@ -11,7 +11,7 @@ const InteractiveSection2 = () => {
 
 	return (
 		<section className='scroll-section-interactive'>
-			<h3 className='arrastra'>Para vajar a la Era Pre Interactiva, arrastra la tarjeta perforable e ingresa los datos al computador</h3>
+			<h3 className='arrastra'>Para vajar a la Era de la Interactividad Mecánica, Mueve el joystick para viajar a la era</h3>
 
 			<div className='switch-container' onClick={toggleSwitch}>
 				<img

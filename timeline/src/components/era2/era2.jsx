@@ -108,8 +108,8 @@ export default function Timeline2() {
   return (
     <section className="timeline-container">
       <section className="bienvenidaa">
-        <h1>Bienvenido/a a la Era Pre interactiva!</h1>
-        <p>Descubre los hitos importantes llevando la tarjeta perforada hasta el final.</p>
+        <h1>Bienvenido/a a la Era de la Interactividad Mecánica!</h1>
+        <p>Descubre los hitos importantes llevando el joystick hasta el final.</p>
       </section>
 
       <div className="timeline" ref={timelineRef}>

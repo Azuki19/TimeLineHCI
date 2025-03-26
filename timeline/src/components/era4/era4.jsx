@@ -102,8 +102,8 @@ export default function Timeline4() {
   return (
     <section className="timeline-container4">
       <section className="bienvenidaaa">
-        <h1>Bienvenido/a a la Era Pre interactiva!</h1>
-        <p>Descubre los hitos importantes llevando la tarjeta perforada hasta el final.</p>
+        <h1>Bienvenido/a a la Era de la Interfaz Gráfica</h1>
+        <p>Descubre los hitos importantes llevando el documento hasta el final.</p>
       </section>
 
       <div className="timeline4" ref={timelineRef}>
@@ -172,7 +172,7 @@ export default function Timeline4() {
       </div>
 
       <div className="final">
-        <h2>Y eso fue un paso por la Era Pre interactiva!</h2>
+        <h2>Y eso fue un paso por la Era de la computación personal!</h2>
         <p>¡Felicidades por completar la línea de tiempo!</p>
       </div>
     </section>

@@ -115,7 +115,7 @@ export default function Timeline5() {
   return (
     <section className="timeline-container5">
       <section className="bienvenidaaa">
-        <h1>Bienvenido/a a la Era Pre interactiva!</h1>
+        <h1>Bienvenido/a a la Era de la Interacción Natura!</h1>
         <p>Descubre los hitos importantes llevando la tarjeta perforada hasta el final.</p>
       </section>
 
@@ -185,7 +185,7 @@ export default function Timeline5() {
       </div>
 
       <div className="final">
-        <h2>Y eso fue un paso por la Era Pre interactiva!</h2>
+        <h2>Y eso fue un paso por la Era de la Interacción Natura!</h2>
         <p>¡Felicidades por completar la línea de tiempo!</p>
       </div>
     </section>

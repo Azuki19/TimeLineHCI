@@ -90,7 +90,7 @@ const InteractiveSection4 = () => {
 
 	return (
 		<section className='scroll-section-interactive' onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
-			<h3 className='titulo'>Arrastra el cable o presiona el botón para conectar</h3>
+			<h3 className='titulo'>Presiona el botón para conectarte a la Era de la Computación Personal </h3>
 
 			<div className='computador-container'>
 				{/* Computador */}
