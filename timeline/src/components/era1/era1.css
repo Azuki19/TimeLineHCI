@@ -1,91 +1,169 @@
 .timeline-container {
-	background-color: rgba(0, 0, 0, 0.392);
-	height: 4900px;
-	position: relative;
-	width: 3000px;
-	display: flex;
-	justify-content: center;
+  margin-top: 40px;
+  height: 2600px;
+  width: max-content;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .timeline {
-	position: relative;
-	width: 90px;
-	background-color: #000;
-	height: 400vh; /* 🔥 Aumenta la altura significativamente */
-	min-height: 3500px; /* 🔥 Ajusta el mínimo para que no se acorte */
+  top: 0;
+  position: relative;
+  width: 90px;
+  background-color: #000;
+  height: 1000px;
+  min-height: 2300px;
 }
 
 .user-marker {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 100px;
-	height: auto;
-	transition: top 0.2s linear;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: auto;
+  transition: top 0.2s linear;
+}
+
+.timeline-item {
+  position: absolute;
+  width: 400px;
+  text-align: center;
+}
+
+/* 🔥 Animación para el título y el año */
+.tituloyeso {
+
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  max-width: 350px;
+  overflow: hidden;
+}
+
+/* 🔥 Cuando la tarjeta está expandida, el título y el año también crecen */
+.tituloyeso.expanded {
+
+  color: white;
+  padding: 15px;
+	max-width: 400px;
+}
+
+.timeline-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.timeline-year {
+  font-size: 48px;
+  font-weight: bold;
 }
 
 .timeline-card {
-	position: absolute;
-	width: 350px; /* 🔥 Se agrandaron los cuadros */
-	padding: 20px;
-	background: white;
-	border-radius: 12px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-	opacity: 0;
-	transform: translateY(50px);
-	transition: opacity 0.5s ease-out, transform 0.5s ease-out, width 0.3s ease-in-out;
-	cursor: pointer;
-	overflow: hidden;
+  width: 400px;
+  padding: 20px;
+  background: white;
+	color: #000;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: width 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.5s ease-out, transform 0.5s ease-out;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* 🔥 Los párrafos están ocultos por defecto */
+.card-content p {
+	margin-top: 20px;
+  display: none;
+}
+
+/* 🔥 Animación de aparición */
+.timeline-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🔥 La tarjeta y el título se expanden juntos */
+.timeline-card.expanded {
+  width: 400px;
+  background: #f8f8f8;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-card.expanded .card-content p {
+  display: block;
+}
+
+.timeline-item.left {
+  left: -520px;
+}
+
+.timeline-item.right {
+  left: 250px;
 }
 
 .timeline-card img {
-	width: 100%;
-	border-radius: 8px;
-	cursor: pointer;
-	transition: transform 0.3s ease-in-out;
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .timeline-card img:hover {
-	transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-.timeline-card.left {
-	left: -520px; /* Aumenta la separación */
+
+.title-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+/* 🔥 Estilización del icono de click */
+.click-icon {
+  width: 70px;
+  height: 70px;
+  margin: 20px; /* Espaciado entre el icono y el título */
+  transform: rotate(180deg) scale(1);
+  animation: click-bounce 1.2s infinite alternate ease-in-out;
+  opacity: 1; /* Siempre visible */
 }
 
-.timeline-card.right {
-	left: 250px; /* Aumenta la separación */
+/* 🔥 Animación para que el ícono rebote suavemente */
+@keyframes click-bounce {
+  0% {
+    transform: rotate(180deg) scale(1);
+  }
+  100% {
+    transform: rotate(170deg) scale(1.2);
+  }
 }
 
-.timeline-card {
-	max-width: 350px; /* 🔥 Evita que crezca demasiado */
+/* 🔥 Asegurar que el icono y el título estén alineados */
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Mantiene la alineación correcta */
 }
 
-.timeline-card.visible {
-	opacity: 1;
-	transform: translateY(0);
+
+/* 🔥 Cuando la tarjeta ha sido clickeada, se centra el texto */
+.tituloyeso.clicked .title-container {
+  justify-content: center; /* Centrar año y título */
 }
 
-.timeline-card h3 {
-	margin: 5px 0;
-	font-size: 1.3em;
-	color: #333;
+.tituloyeso.clicked .timeline-year {
+  margin-left: 0; /* Quitar espacio adicional */
+  text-align: center; /* Asegurar alineación */
 }
 
-.timeline-card p {
-	font-size: 1em;
-	color: #555;
-	margin: 3px 0;
-	display: none; /* 🔥 Oculta la información por defecto */
-}
-
-/* 🔥 Cuando la tarjeta está expandida, muestra la información */
-.timeline-card.expanded {
-	width: 400px;
-	background: #f8f8f8;
-	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.timeline-card.expanded p {
-	display: block;
+.brazo{
+	background-color: aqua;
+	width: 100px;
+	height: 50px;
+	margin-left: 400px;
 }

@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
-import './era1.css';
+import React, { useEffect, useState, useRef } from "react";
+import "./era1.css";
 
 const milestones = [
 	{
@@ -33,71 +33,117 @@ const milestones = [
 	},
 ];
 
-const Era1 = () => {
-	const [markerPosition, setMarkerPosition] = useState(0);
-	const [expandedCard, setExpandedCard] = useState(null);
-	const timelineRef = useRef(null);
+export default function Timeline() {
+  const [markerPosition, setMarkerPosition] = useState(0);
+  const [expandedCard, setExpandedCard] = useState(null);
+  const [visibleMilestones, setVisibleMilestones] = useState({});
+  const [clickedCards, setClickedCards] = useState({}); // 🔥 Nueva variable de estado
 
-	useEffect(() => {
-		const handleScroll = () => {
-			if (!timelineRef.current) return;
+  const timelineRef = useRef(null);
 
-			const timeline = timelineRef.current;
-			const rect = timeline.getBoundingClientRect();
-			const windowHeight = window.innerHeight;
-			const timelineHeight = rect.height;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!timelineRef.current) return;
 
-			// Calcular la posición del scroll dentro de la línea de tiempo
-			const scrolledInsideTimeline = Math.min(Math.max(windowHeight / 2 - rect.top, 0), timelineHeight);
-			const newPosition = (scrolledInsideTimeline / timelineHeight) * 100;
-			const boundedPosition = Math.max(0, Math.min(newPosition, 100));
+      const timeline = timelineRef.current;
+      const rect = timeline.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const timelineHeight = rect.height;
 
-			// Aplicar la nueva posición sin retrasos ni interpolaciones
-			setMarkerPosition(boundedPosition);
-		};
+      const scrolledInsideTimeline = Math.min(
+        Math.max(windowHeight / 2 - rect.top, 0),
+        timelineHeight
+      );
+      const newPosition = (scrolledInsideTimeline / timelineHeight) * 100;
+      const boundedPosition = Math.max(0, Math.min(newPosition, 100));
 
-		window.addEventListener('scroll', handleScroll);
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
+      setMarkerPosition(boundedPosition);
 
-	const toggleCard = (index) => {
-		setExpandedCard(expandedCard === index ? null : index);
-	};
+      const newVisibleMilestones = {};
+      milestones.forEach((_, index) => {
+        if (boundedPosition > index * (100 / milestones.length) - 10) {
+          newVisibleMilestones[index] = true;
+        }
+      });
 
-	return (
-		<div className='timeline-container'>
-			<div className='timeline' ref={timelineRef}>
-				<img
-					src='https://pbs.twimg.com/media/Gm5pmPYXMAEPWLV?format=png&name=small'
-					alt='Máquina de escribir'
-					className='user-marker'
-					style={{ top: `${markerPosition}%` }}
-				/>
+      setVisibleMilestones(newVisibleMilestones);
+    };
 
-				{milestones.map((milestone, index) => (
-					<div
-						key={index}
-						className={`timeline-card ${index % 2 === 0 ? 'left' : 'right'} ${
-							markerPosition > index * (100 / milestones.length) ? 'visible' : ''
-						} ${expandedCard === index ? 'expanded' : ''}`}
-						style={{ top: `${(index + 1) * (100 / milestones.length)}%` }}
-						onClick={() => toggleCard(index)}
-					>
-						<img src={milestone.img} alt={milestone.nombre} />
-						<h3>{milestone.nombre}</h3>
-						<p>
-							<strong>{milestone.año}</strong>
-						</p>
-						<p>{milestone.text1}</p>
-						<p>{milestone.text2}</p>
-						<p>{milestone.text3}</p>
-					</div>
-				))}
-			</div>
-		</div>
-	);
-};
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-export default Era1;
+  const toggleCard = (index) => {
+    setExpandedCard(expandedCard === index ? null : index);
+
+    // 🔥 Marcar la tarjeta como clickeada para ocultar la manito
+    setClickedCards((prev) => ({
+      ...prev,
+      [index]: true,
+    }));
+  };
+
+  return (
+    <section className="timeline-container">
+      <div className="timeline" ref={timelineRef}>
+        <img
+          className="user-marker"
+          src="https://pbs.twimg.com/media/Gm5pmPYXMAEPWLV?format=png&name=small"
+          alt="Máquina de escribir"
+          style={{ top: `${markerPosition}%` }}
+        />
+
+        {milestones.map((milestone, index) => (
+          <div
+            key={index}
+            className={`timeline-item ${index % 2 === 0 ? "left" : "right"} ${
+              visibleMilestones[index] ? "visible" : ""
+            }`}
+            style={{
+              top: `${index * (50 / (milestones.length - 1)) + 10}%`,
+            }}
+          >
+
+						 <div className="brazo"></div>
+
+            <div
+  className={`tituloyeso ${expandedCard === index ? "expanded" : ""} ${
+    clickedCards[index] ? "clicked" : ""
+  }`}
+  onClick={() => toggleCard(index)}
+>
+  <div className="title-container">
+    {/* 🔥 Solo mostrar la manito si la tarjeta NO ha sido clickeada */}
+    {!clickedCards[index] && (
+      <img
+        className="click-icon"
+        src="https://pbs.twimg.com/media/Gm763hsWoAAp5ah?format=png&name=small"
+        alt="Click aquí"
+      />
+    )}
+    <h3 className="timeline-year">{milestone.año}</h3>
+  </div>
+  <h1 className="timeline-title">{milestone.nombre}</h1>
+</div>
+
+            <div
+              className={`timeline-card ${visibleMilestones[index] ? "visible" : ""} ${
+                expandedCard === index ? "expanded" : ""
+              }`}
+              onClick={() => toggleCard(index)}
+            >
+              <img src={milestone.img} alt={milestone.nombre} />
+              <div className="card-content">
+                <p>{milestone.text1}</p>
+                <p>{milestone.text2}</p>
+                <p>{milestone.text3}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}

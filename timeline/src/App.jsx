@@ -17,7 +17,7 @@ function App() {
         text1="Desde los primeros intentos de interacción hasta la inteligencia artificial actual, cada avance ha acercado más a las personas y las máquinas."
         text2="Explora la evolución de esta conexión y descubre cómo llegamos hasta aquí."
       />
-      <InteractiveSection /> {/* Solo se pasa el componente aquí */}
+      <InteractiveSection /> 
     </div>
   );
 }
