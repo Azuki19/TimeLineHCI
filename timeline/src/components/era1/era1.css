@@ -207,3 +207,13 @@ select,
 	width: 140px;
 	height: 140px;
 }
+
+
+.section2, .section3, .section4 {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.section2.visible, .section3.visible, .section4.visible {
+  opacity: 1;
+}

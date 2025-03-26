@@ -244,4 +244,13 @@ img,
 	border-radius: 5PX;
 	margin-top: 580px;
 	color: black;
+	margin-bottom: 20px;
+}
+
+.bg2{
+	background-color: #F1E8C6;
+	width: 1400px;
+	border-radius: 5PX;
+	margin-bottom: 20px;
+	color: black;
 }

@@ -17,7 +17,7 @@ const InteractiveSection = () => {
 
 	return (
 		<section className='scroll-section-interactive'>
-			<h3 className='arrastra'>Para vajar en el tiempo, arrastra la tarjeta perforable e ingresar los datos al computador</h3>
+			<h3 className='arrastra'>Para vajar a la Era Pre Interactiva, arrastra la tarjeta perforable e ingresa los datos al computador</h3>
 			<div className='drag-container'>
 				<img
 					id='perforada'

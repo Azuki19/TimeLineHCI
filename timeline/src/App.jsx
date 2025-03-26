@@ -70,7 +70,10 @@ function App() {
           <section className='bg1'>
           <InteractiveSection />
           </section>
-			<InteractiveSection2 />
+
+			 <section className='bg2'>
+          <InteractiveSection2 />
+          </section>
 			<InteractiveSection3 />
 			<InteractiveSection4 />
       <InteractiveSection5 />

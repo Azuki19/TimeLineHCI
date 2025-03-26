@@ -170,14 +170,13 @@ export default function Timeline() {
         <img className="pcfinal" src="https://pbs.twimg.com/media/Gm8rlVUXoAEvcIc?format=png&name=medium" />
       </div>
 
-      {/* Mostrar la interactionsection2 cuando el user-marker llegue a la PC final */}
-      {showInteractionSection && (
-        <div className="interactionsection2">
-          {/* Aquí van los elementos de la sección que se muestra al llegar al final */}
+
+        <div className="final">
+
           <h2>Y eso fue un paso por la Era Pre interactiva!</h2>
           <p>¡Felicidades por completar la línea de tiempo!</p>
         </div>
-      )}
+
     </section>
   );
 }
