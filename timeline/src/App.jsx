@@ -91,6 +91,14 @@ function App() {
           <InteractiveSection6 />
 
           </section>
+
+
+
+          <ScrollSection className='Texto3'
+              text1='Y así, la tecnología sigue avanzando al igual que el mundo!'
+              text2='Gracias por ver la Línea del Tiempo de HCI'
+          />
+            <section className='w'></section>
 		</div>
 	);
 }
