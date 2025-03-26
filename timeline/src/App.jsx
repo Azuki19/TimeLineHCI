@@ -6,6 +6,7 @@ import InteractiveSection from './components/interactivesection/interactivesecti
 import InteractiveSection2 from './components/interactionSection2/interactionSection2';
 import InteractiveSection3 from './components/interactionSection3/interactionSection3';
 import InteractiveSection4 from './components/interactionSection4/interactionSection4';
+import InteractiveSection5 from './components/interactionSection5/interactionSection5';
 
 import './App.css';
 
@@ -25,6 +26,7 @@ function App() {
 			<InteractiveSection2 />
 			<InteractiveSection3 />
 			<InteractiveSection4 />
+			<InteractiveSection5 />
 		</div>
 	);
 }
