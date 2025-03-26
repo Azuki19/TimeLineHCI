@@ -244,14 +244,14 @@ img,
 	border-radius: 5PX;
 	margin-top: 580px;
 	color: black;
-	margin-bottom: 20px;
+	margin-bottom: 300px;
 }
 
 .bg2{
 	background-color: #F1E8C6;
 	width: 1400px;
 	border-radius: 5PX;
-	margin-bottom: 20px;
+	margin-bottom: 300px;
 	color: black;
 }
 
@@ -260,7 +260,7 @@ img,
 	width: 1400px;
 
 	border-radius: 5PX;
-	margin-bottom: 20px;
+	margin-bottom: 300px;
 	color: black;
 }
 
@@ -269,7 +269,7 @@ img,
 	width: 1400px;
 
 	border-radius: 5PX;
-	margin-bottom: 20px;
+	margin-bottom: 300px;
 	color: black;
 }
 
@@ -278,7 +278,7 @@ img,
 	width: 1400px;
 
 	border-radius: 5PX;
-	margin-bottom: 20px;
+	margin-bottom: 300px;
 	color: black;
 }
 
@@ -299,3 +299,4 @@ img,
 .w{
 	height: 200px;
 }
+
