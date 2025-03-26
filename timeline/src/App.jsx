@@ -4,6 +4,7 @@ import Intro from './components/intro/intro';
 import ScrollSection from './components/scrollsection/scrollsection';
 import InteractiveSection from './components/interactivesection/interactivesection';
 import InteractiveSection2 from './components/interactionSection2/interactionSection2';
+import InteractiveSection3 from './components/interactionSection3/interactionSection3';
 
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
 			/>
 			<InteractiveSection /> {/* Solo se pasa el componente aquí */}
 			<InteractiveSection2 />
+			<InteractiveSection3 />
 		</div>
 	);
 }

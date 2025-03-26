@@ -1,0 +1,33 @@
+.scroll-section-interactive {
+	text-align: center;
+	padding: 20px;
+}
+
+.titulo {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+/* Contenedor de la carpeta */
+.carpeta-container {
+	display: inline-flex; /* Permite alinear elementos en línea */
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+}
+
+/* Imagen de la carpeta */
+.carpeta-imagen {
+	width: 100px;
+	transition: transform 0.2s ease-in-out;
+}
+
+/* Documento que aparece cuando la carpeta está abierta */
+.documento-imagen {
+	width: 80px;
+	position: absolute;
+	left: 110%; /* Mueve el documento a la derecha de la carpeta */
+	top: 10px; /* Ajusta la posición vertical */
+	opacity: 1;
+	transition: opacity 0.3s ease-in-out;
+}
