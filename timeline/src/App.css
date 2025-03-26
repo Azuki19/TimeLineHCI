@@ -6,6 +6,12 @@
 }
 
 body {
+  cursor: url('./assets/Pointer.png'), auto;
+}
+
+
+
+body {
 	color: white;
 	font-family: 'Orbitron', sans-serif;
 	overflow: auto; /* Scroll habilitado inicialmente */
@@ -45,7 +51,7 @@ body::before {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	padding: 10px;
+
 }
 
 h1 {
@@ -55,13 +61,24 @@ h1 {
 	margin-bottom: 10px;
 }
 
-.antes {
+.Texto1 {
 	margin-top: 150px;
 }
 
-.desde {
+.Texto2 {
 	margin-top: 100px;
-	margin-bottom: 20px;
+	margin-bottom: 50px;
+}
+
+.brl{
+	margin-top: 600px;
+}
+
+
+.arrastra{
+	color: black;
+	font-size: 24px;
+	margin-bottom: 30px;
 }
 
 .desliza {
@@ -143,10 +160,7 @@ h3 {
 	opacity: 0;
 }
 
-.arrastra {
-	margin-top: 300px;
-	margin-bottom: 50px;
-}
+
 
 /* ======== ANIMACIÓN DE FLECHAS ======== */
 .arrow-container {
@@ -154,7 +168,7 @@ h3 {
 	justify-content: center;
 	align-items: center;
 	font-size: 40px;
-	color: rgba(255, 255, 255, 0.3);
+	color: rgba(255, 0, 0, 0.3);
 }
 
 .arrow {
@@ -199,4 +213,35 @@ h3 {
 	display: block; /* Solo se muestra cuando está activa */
 	opacity: 1;
 	transform: translateY(0);
+}
+
+
+
+body {
+  cursor: url('./assets/default.png') 16 16, auto; /* Debe ser 32x32 */
+}
+
+a,
+button,
+.interactivo,
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"],
+label,
+select,
+.img-clicable,
+img,
+.card,
+.draggable {
+  cursor: url('./assets/manito.png') 16 16, pointer;
+}
+
+
+.bg1{
+	background-color: #F1E8C6;
+	width: 1400px;
+	border-radius: 5PX;
+	margin-top: 580px;
+	color: black;
 }

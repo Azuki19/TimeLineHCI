@@ -1,7 +1,7 @@
 // InteractiveSection.jsx
 import React, { useState } from 'react';
 import './interactivesection.css'; // Asegúrate de tener los estilos correctos
-import Era1 from '../era1/era1';
+import Timeline from '../era1/era1';
 
 const InteractiveSection = () => {
 	const [mostrarEra1, setMostrarEra1] = useState(false);
@@ -17,7 +17,7 @@ const InteractiveSection = () => {
 
 	return (
 		<section className='scroll-section-interactive'>
-			<h3 className='arrastra'>Arrastra la tarjeta al computador para viajar en el tiempo</h3>
+			<h3 className='arrastra'>Para vajar en el tiempo, arrastra la tarjeta perforable e ingresar los datos al computador</h3>
 			<div className='drag-container'>
 				<img
 					id='perforada'
@@ -26,13 +26,20 @@ const InteractiveSection = () => {
 					draggable='true'
 					onDragStart={(event) => event.dataTransfer.setData('text', 'perforada')}
 				/>
+
+<div className="arrow-container">
+    <span className="arrow">&gt;</span>
+    <span className="arrow">&gt;</span>
+    <span className="arrow">&gt;</span>
+</div>
+
 				<div id='pc' className='drop-zone' onDrop={handleDrop} onDragOver={handleDragOver}>
-					<img src='https://pbs.twimg.com/media/Gm2Mz15XYAAg582?format=png&name=large' />
+					<img src='https://pbs.twimg.com/media/Gm8rlVUXoAEvcIc?format=png&name=medium' />
 				</div>
 			</div>
 
 			{/* Aquí solo se muestra la sección de la era 1 cuando `mostrarEra1` es verdadero */}
-			{mostrarEra1 && <Era1 />}
+			{mostrarEra1 && <Timeline />}
 		</section>
 	);
 };
