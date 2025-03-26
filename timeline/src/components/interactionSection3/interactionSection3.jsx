@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './interactionSection3.css';
-import Era3 from '../era3/era3';
+import Timeline3 from '../era3/era3';
 
 const InteractiveSection3 = () => {
 	const [carpetaAbierta, setCarpetaAbierta] = useState(false);
@@ -12,7 +12,7 @@ const InteractiveSection3 = () => {
 
 	return (
 		<section className='scroll-section-interactive'>
-			<h3 className='titulo'>Haz clic en la carpeta para abrir o cerrar</h3>
+			<h3 className='titulo'>Haz clic en la carpeta para abrir o cerrar la Era de la Interfaz Gráfica</h3>
 			<div className='carpeta-container' onClick={handleClick}>
 				<img
 					src={
@@ -32,7 +32,7 @@ const InteractiveSection3 = () => {
 				)}
 			</div>
 			{/* Mostrar Era3 solo si la carpeta está abierta */}
-			{carpetaAbierta && <Era3 />}
+			{carpetaAbierta && <Timeline3 />}
 		</section>
 	);
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './interactionSection4.css';
-import Era4 from '../era4/era4';
+import Timeline4 from '../era4/era4';
 
 const InteractiveSection4 = () => {
 	const [startPos, setStartPos] = useState(null);
@@ -137,7 +137,7 @@ const InteractiveSection4 = () => {
 			{conectado && <div className='mensaje'>Conexión exitosa</div>}
 
 			{/* Mostrar la siguiente sección después de conectar */}
-			{conectado && <Era4 />}
+			{conectado && <Timeline4 />}
 		</section>
 	);
 };

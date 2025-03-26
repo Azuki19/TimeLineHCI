@@ -59,7 +59,7 @@ export default function Timeline() {
         timelineHeight
       );
       const newPosition = (scrolledInsideTimeline / timelineHeight) * 100;
-      const boundedPosition = Math.max(0, Math.min(newPosition, 100));
+      const boundedPosition = Math.max(0, Math.min(newPosition, 96));
 
       setMarkerPosition(boundedPosition);
 

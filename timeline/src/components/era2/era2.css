@@ -1,4 +1,4 @@
-.timeline-container {
+.timeline-wrapper {
 	color: #27110b;
 	height: 2900px;
 	width: max-content;
@@ -7,7 +7,7 @@
 	justify-content: center;
 }
 
-.timeline {
+.ttimeline-structure {
 	top: 0;
 	position: relative;
 	width: 90px;
@@ -16,12 +16,12 @@
 	min-height: 2300px;
 }
 
-.user-marker {
+.marker-icon {
 
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 120px;
+	width: 220px;
 	height: auto;
 	transition: top 0.2s linear;
 
@@ -35,7 +35,7 @@
 }
 
 /* 🔥 Animación para el título y el año */
-.tituloyeso {
+.tituloyesoo {
 	padding: 5px;
 	border-radius: 10px;
 	text-align: center;
@@ -46,7 +46,7 @@
 }
 
 /* 🔥 Cuando la tarjeta está expandida, el título y el año también crecen */
-.tituloyeso.expanded {
+.tituloyesoo.expanded {
 	color: #27110b;
 	padding: 15px;
 	max-width: 400px;
@@ -127,21 +127,21 @@
 	width: 70px;
 	height: 70px;
 	margin: 20px; /* Espaciado entre el icono y el título */
-	transform: rotate(180deg) scale(1);
+	transform: rotate(90deg) scale(1);
 	animation: click-bounce 1.2s infinite alternate ease-in-out;
 	opacity: 1; /* Siempre visible */
 	cursor: url('./assets/manito.png') 16 16, pointer;
 }
 
-/* 🔥 Animación para que el ícono rebote suavemente */
 @keyframes click-bounce {
-	0% {
-		transform: rotate(180deg) scale(1);
-	}
-	100% {
-		transform: rotate(170deg) scale(1.2);
-	}
+  0% {
+    transform: rotate(90deg) scale(1);
+  }
+  100% {
+    transform: rotate(180deg) scale(1.2);
+  }
 }
+
 
 /* 🔥 Asegurar que el icono y el título estén alineados */
 .title-container {
@@ -152,17 +152,17 @@
 }
 
 /* 🔥 Cuando la tarjeta ha sido clickeada, se centra el texto */
-.tituloyeso.clicked .title-container {
+.tituloyesoo.clicked .title-container {
 	cursor: url('./assets/manito.png') 16 16, pointer;
 	justify-content: center; /* Centrar año y título */
 }
 
-.tituloyeso.clicked .timeline-year {
+.tituloyesoo.clicked .timeline-year {
 	margin-left: 0; /* Quitar espacio adicional */
 	text-align: center; /* Asegurar alineación */
 }
 
-.brazo {
+.timeline-block {
 	position: absolute;
 	width: 110px; /* Longitud del brazo */
 	height: 50px; /* Grosor del brazo */
@@ -172,12 +172,12 @@
 }
 
 /* 🔥 Brazo para la izquierda */
-.brazo-left {
+.timeline-block-left {
 	left: calc(-110px); /* Pegar el brazo a la tarjeta */
 }
 
 /* 🔥 Brazo para la derecha */
-.brazo-right {
+.timeline-block-right {
 	right: calc(-110px);
 }
 
@@ -197,15 +197,16 @@ select,
 	cursor: url('./assets/manito.png') 16 16, pointer;
 }
 
-.bienvenida{
+.bienvenidaa{
 	color: #000;
 	font-size: 24px;
 	margin-bottom: 100px;
 }
 
-.pcfinal{
-	width: 140px;
+.final-pc{
+	width: 160px;
 	height: 140px;
+	margin-bottom: 40px;
 }
 
 

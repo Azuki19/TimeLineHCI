@@ -1,6 +1,6 @@
 .timeline-container {
 	color: #27110b;
-	height: 2900px;
+	height: 2000px;
 	width: max-content;
 	position: relative;
 	display: flex;
@@ -8,12 +8,13 @@
 }
 
 .timeline {
+	color: #000;
 	top: 0;
 	position: relative;
 	width: 90px;
 	background-color: #8EBAAE;
-	height: 1010px;
-	min-height: 2300px;
+	height: 100px;
+	min-height: 1300px;
 }
 
 .user-marker {
@@ -36,6 +37,7 @@
 
 /* 🔥 Animación para el título y el año */
 .tituloyeso {
+	color: #27110b;
 	padding: 5px;
 	border-radius: 10px;
 	text-align: center;
@@ -198,7 +200,7 @@ select,
 }
 
 .bienvenida{
-	color: #000;
+	color: #27110b;
 	font-size: 24px;
 	margin-bottom: 100px;
 }

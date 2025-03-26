@@ -1,0 +1,125 @@
+.timeline-container{
+  height: 4500px;
+}
+
+
+.timeline {
+  position: relative;
+  width: 120px; /* Un poco más de ancho */
+  background-color: #0680C9;
+  height: auto;
+  min-height: 4000px; /* Ajusta según la cantidad de elementos */
+}
+
+.timeline-item {
+  position: absolute;
+  width: 420px;
+  text-align: center;
+  top: var(--item-position); /* Controlar mediante JS */
+}
+
+.timeline-item.left {
+  left: -500px; /* Más cerca de la línea */
+}
+
+.timeline-item.right {
+  left: 200px;
+}
+
+.brazo {
+  position: absolute;
+  width: 100px; /* Más corto */
+  height: 80px;
+  background-color: #0680C9;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.brazo-left {
+  left: 400px;
+}
+
+.brazo-right {
+  right: 400px;
+}
+
+
+.timeline-card {
+  width: 420px; /* Más espacio */
+  padding: 15px;
+  background: #EC8481;
+  color: #27110b;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(50px);
+  cursor: pointer;
+}
+
+.timeline-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mejor animación para los títulos */
+.tituloyesooo {
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.tituloyesooo.expanded {
+
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Animaciones más suaves */
+@keyframes click-bounce {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.1);
+  }
+}
+
+.user-marker {
+
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 220px;
+	height: auto;
+	transition: top 0.2s linear;
+
+}
+
+.bienvenidaaa{
+	color: #ffffff;
+	font-size: 24px;
+	margin-bottom: 100px;
+}
+
+
+/* 🔥 Animación para el título y el año */
+.tituloyesooo {
+  color: #ffffff;
+	padding: 5px;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	max-width: 350px;
+	overflow: hidden;
+}
+
+/* 🔥 Cuando la tarjeta está expandida, el título y el año también crecen */
+.tituloyesooo.expanded {
+	color: #ffffff;
+	padding: 15px;
+	max-width: 400px;
+}

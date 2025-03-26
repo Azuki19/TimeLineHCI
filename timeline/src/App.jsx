@@ -74,8 +74,15 @@ function App() {
 			 <section className='bg2'>
           <InteractiveSection2 />
           </section>
-			<InteractiveSection3 />
-			<InteractiveSection4 />
+
+
+          <section className='bg3'>
+          <InteractiveSection3 />
+          </section>
+
+          <section className='bg4'>
+          <InteractiveSection4 />
+          </section>
       <InteractiveSection5 />
 			<InteractiveSection6 />
 		</div>

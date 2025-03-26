@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./era2.css";
-import joystickImg from "../../assets/joystick.png"; // ✅ Importa el joystick
+import joystickImg from "../../assets/joystick.png";
+import consolaImg from "../../assets/consola.png";
+
 
 const milestones = [
   {
@@ -63,7 +65,7 @@ export default function Timeline2() {
         timelineHeight
       );
       const newPosition = (scrolledInsideTimeline / timelineHeight) * 100;
-      const boundedPosition = Math.max(0, Math.min(newPosition, 100));
+      const boundedPosition = Math.max(0, Math.min(newPosition, 96));
 
       setMarkerPosition(boundedPosition);
 
@@ -105,7 +107,7 @@ export default function Timeline2() {
 
   return (
     <section className="timeline-container">
-      <section className="bienvenida">
+      <section className="bienvenidaa">
         <h1>Bienvenido/a a la Era Pre interactiva!</h1>
         <p>Descubre los hitos importantes llevando la tarjeta perforada hasta el final.</p>
       </section>
@@ -135,7 +137,7 @@ export default function Timeline2() {
             <div className={`brazo ${index % 2 === 0 ? "brazo-left" : "brazo-right"}`}></div>
 
             <div
-              className={`tituloyeso ${expandedCard === index ? "expanded" : ""} ${
+              className={`tituloyesoo ${expandedCard === index ? "expanded" : ""} ${
                 clickedCards[index] ? "clicked" : ""
               }`}
               onClick={() => toggleCard(index)}
@@ -171,7 +173,8 @@ export default function Timeline2() {
       </div>
 
       <div ref={pcFinalRef}>
-        <img className="pcfinal" src="https://pbs.twimg.com/media/Gm8rlVUXoAEvcIc?format=png&name=medium" alt="PC Final" />
+      <img className="pcfinal" src={consolaImg} alt="Consola final" />
+
       </div>
 
       <div className="final">

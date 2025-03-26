@@ -11,7 +11,7 @@
 /* Contenedor de la carpeta */
 .carpeta-container {
 	display: inline-flex; /* Permite alinear elementos en línea */
-	align-items: center;
+
 	cursor: pointer;
 	position: relative;
 }
