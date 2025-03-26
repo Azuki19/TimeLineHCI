@@ -1,0 +1,66 @@
+.scroll-section-interactive {
+	position: relative;
+	text-align: center;
+	padding: 20px;
+	color: white;
+}
+
+.computador-container {
+	position: relative;
+	width: 600px;
+	height: 400px;
+	margin: 0 auto;
+}
+
+.computador-imagen {
+	position: absolute;
+	width: 170px;
+	height: auto;
+	cursor: pointer;
+	margin-left: -150px;
+	margin-top: -40px;
+}
+
+.modem-imagen {
+	position: absolute;
+	width: 280px;
+	height: auto;
+	cursor: pointer;
+	margin-left: -10px;
+	margin-top: -60px;
+}
+
+.bttn-conectar {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	padding: 10px 20px;
+	font-size: 16px;
+	color: rgb(0, 0, 0);
+	background-color: rgb(205, 209, 255);
+	font-weight: bold;
+	margin-left: 30px;
+	top: 250px;
+	left: 275px;
+	z-index: 1000;
+	display: block;
+	visibility: visible;
+}
+
+.loading-bar {
+	color: white;
+	padding: 10px;
+	margin-top: -160px;
+}
+
+.mensaje {
+	background-color: green;
+	color: white;
+	padding: 10px;
+	margin-top: -160px;
+}
+
+.mensaje.guardado {
+	background-color: blue;
+	padding: 10px;
+	margin-top: 20px;
+}

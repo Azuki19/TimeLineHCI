@@ -1,0 +1,23 @@
+.scroll-section-interactive {
+	text-align: center;
+	padding: 20px;
+}
+
+.gira {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+/* Contenedor del switch */
+.switch-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+/* Imagen del switch */
+.switch-image {
+	width: 80px; /* Ajusta según el tamaño real de la imagen */
+	transition: opacity 0.2s ease-in-out;
+}
